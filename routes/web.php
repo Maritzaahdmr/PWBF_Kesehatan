@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KecamatanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
-Route::get('/', function () {
-    return view('table');
-});
+// Route::get('/', function () {
+//     return view('table');
+// });
+Route::get('/kecamatan', [KecamatanController::class, 'index'] );
+?>

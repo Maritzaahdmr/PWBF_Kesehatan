@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -189,12 +188,12 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/layout/top-nav.html" class="nav-link">
+                <a href="/kecamatan" class="nav-link">
                   <p>Kecamatan</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/boxed.html" class="nav-link">
+                <a href="/kelurahan" class="nav-link">
                   <p>Kelurahan</p>
                 </a>
               </li>
@@ -246,15 +245,10 @@
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6">
+          <div class="col-sm-12">
             <h1 class="m-0 text-dark">Dashboard</h1>
             </div><!-- /.col -->
-            @yield('table')
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#"></a></li>
-              <li class="breadcrumb-item active"></li>
-            </ol>
+            @yield('container')
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
