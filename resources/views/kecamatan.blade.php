@@ -13,8 +13,8 @@
           <tr>
             <th>ID_Kecamatan</th>
             <th>Kecamatan</th>
-            {{-- <th>Created_At</th>
-            <th>Upadate_At</th> --}}
+            <th>Created_At</th>
+            <th>Upadate_At</th>
           </tr>
           </thead>
           @foreach($data as $kecamatan )
@@ -22,8 +22,8 @@
           <tr>
             <td>{{ $kecamatan->ID_KECAMATAN }}</td>
             <td>{{ $kecamatan->KECAMATAN }}</td>
-            {{-- <td>{{ $kecamatan->CREATED_AT }}</td>
-            <td>{{ $kecamatan->UPDATED_AT }}</td> --}}
+            <td>{{ $kecamatan->CREATED_AT }}</td>
+            <td>{{ $kecamatan->UPDATED_AT }}</td>
 
           </tr>
           @endforeach

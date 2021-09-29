@@ -14,6 +14,8 @@
             <th>ID KELURAHAN</th>
             <th>ID KECAMATAN</th>
             <th>KELURAHAN</th>
+            <th>CREATED AT</th>
+            <th>UPDATED AT</th>
           </tr>
           </thead>
           @foreach($data as $kelurahan )
@@ -22,6 +24,8 @@
             <td>{{ $kelurahan->ID_KELURAHAN }}</td>
             <td>{{ $kelurahan->ID_KECAMATAN }}</td>
             <td>{{ $kelurahan->KELURAHAN }}</td>
+            <td>{{ $kelurahan->CREATED_AT }}</td>
+            <td>{{ $kelurahan->UPDATED_AT }}</td>
           </tr>
           @endforeach
         </table>
