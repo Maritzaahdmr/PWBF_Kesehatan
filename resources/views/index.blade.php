@@ -801,7 +801,12 @@
     </div>
 </div>
 <footer class="main-footer">
+  <div class="container">
+    <div class="row">
+    <div class="col-sm-6">
     <center>Copyright &copy; 2021 <a href="http://adminlte.io">Fiyah Maritza  All rights reserved.</a>.</center>
+    </div>
+    </div>
   </footer>
         <div class="col-sm-6 col-md-6 col-lg-6">
         <div class="wow fadeInRight" data-wow-delay="0.1s">
