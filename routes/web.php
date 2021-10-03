@@ -21,6 +21,11 @@ Route::get('/', function () {
 // Route::get('/', function () {
 //     return view('table');
 // });
+
+Route::get('/index', function () {
+    return view('index');
+});
+
 Route::get('/kecamatan', [KecamatanController::class, 'index'] );
 Route::get('/kelurahan', [kelurahanController::class, 'index'] );
 ?>

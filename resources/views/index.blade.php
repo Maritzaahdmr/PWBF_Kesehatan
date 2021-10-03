@@ -11,8 +11,8 @@
 		<meta name="author" content="Me" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Posyandu | ASIPS</title>
-  <link rel="icon" href="https://posyandu.bandungkab.go.id/assets/img/favicon.ico" type="image/x-icon"/>
-        <link rel="shortcut icon" href="https://posyandu.bandungkab.go.id/assets/img/favicon.ico" type="image/x-icon"/>
+  <link rel="" href="" type=""/>
+        <link rel="" href="" type=""/>
 
   <!-- css -->
   <link href="https://posyandu.bandungkab.go.id/assets/medicio/css/bootstrap.min.css" rel="stylesheet" type="text/css">
