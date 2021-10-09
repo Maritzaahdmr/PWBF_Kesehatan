@@ -28,6 +28,10 @@ Route::get('/index', function () {
 Route::get('/login', function () {
     return view('login');
 });
+Route::get('/agenda', function () {
+    return view('agenda');
+});
+
 
 Route::get('/kecamatan', [KecamatanController::class, 'index'] );
 Route::get('/kelurahan', [kelurahanController::class, 'index'] );
