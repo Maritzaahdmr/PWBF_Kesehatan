@@ -189,17 +189,32 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="/kecamatan" class="nav-link">
+                  <i class="fas fa-city"></i>
                   <p>Kecamatan</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="/kelurahan" class="nav-link">
+                  <i class="fas fa-city"></i>
                   <p>Kelurahan</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="pages/layout/fixed-sidebar.html" class="nav-link">
+                  <i class="fas fa-hospital-alt"></i>
                   <p>Posyandu</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/layout/fixed-sidebar.html" class="nav-link">
+                  <i class="fas fa-clipboard-list"></i>
+                  <p>Daftar Posyandu Ibu Hamil</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/layout/fixed-sidebar.html" class="nav-link">
+                  <i class="fas fa-clipboard-list"></i>
+                  <p>Daftar Posyandu Balita</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -261,10 +276,10 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  <footer class="main-footer">
+  {{-- <footer class="main-footer">
     <strong>Copyright &copy; 2021 <a href="http://adminlte.io">Fiyah Maritza</a>.</strong>
     All rights reserved.
-  </footer>
+  </footer> --}}
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">

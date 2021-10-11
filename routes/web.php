@@ -21,7 +21,9 @@ Route::get('/', function () {
 // Route::get('/', function () {
 //     return view('table');
 // });
-
+Route::get('/', function () {
+    return view('grafik');
+});
 Route::get('/index', function () {
     return view('index');
 });
