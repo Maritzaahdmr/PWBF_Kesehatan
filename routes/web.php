@@ -5,6 +5,7 @@ use App\Http\Controllers\KecamatanController;
 use App\Http\Controllers\KelurahanController;
 use App\Http\Controllers\PosyanduController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,11 +38,12 @@ Route::get('/agenda', function () {
 Route::get('/', function () {
     return view('grafik');
 });
-
-
+// Route::get('/', function () {
+//     return view('posyandu');
+// });
 Route::get('/kecamatan', [KecamatanController::class, 'index'] );
-//Route::get('/kecamatan/create', [KecamatanController::class, 'create']->name->('kecamatan.create'));
-
 Route::get('/kelurahan', [kelurahanController::class, 'index'] );
+Route::get('/posyandu', [PosyanduController::class, 'index'] );
+
 
 ?>
