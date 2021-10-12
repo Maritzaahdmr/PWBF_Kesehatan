@@ -200,8 +200,8 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/fixed-sidebar.html" class="nav-link">
-                  <i class="fas fa-hospital-alt"></i>
+                <a href="" class="nav-link">
+                  {{-- <i class="fas fa-hospital-alt"></i> --}}
                   <p>Posyandu</p>
                 </a>
               </li>

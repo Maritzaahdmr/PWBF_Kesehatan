@@ -8,7 +8,7 @@
       </div>
       <!-- /.card-header -->
       <div class="card-body">
-        <p><a href="#"<button type="button" class="btn btn-primary">Tambah Data</button></a></p>
+        <p><a href="{{route('kecamatan.create') }}"<button type="button" class="btn btn-primary">Tambah Data</button></a></p>
         <table id="example1" class="table table-bordered table-striped">
           <thead>
           <tr>

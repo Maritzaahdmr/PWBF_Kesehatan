@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KecamatanController;
 use App\Http\Controllers\KelurahanController;
+use App\Http\Controllers\PosyanduController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +37,11 @@ Route::get('/agenda', function () {
 Route::get('/', function () {
     return view('grafik');
 });
+
+
 Route::get('/kecamatan', [KecamatanController::class, 'index'] );
+//Route::get('/kecamatan/create', [KecamatanController::class, 'create']->name->('kecamatan.create'));
+
 Route::get('/kelurahan', [kelurahanController::class, 'index'] );
+
 ?>
