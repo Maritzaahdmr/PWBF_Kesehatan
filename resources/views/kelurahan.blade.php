@@ -16,6 +16,7 @@
             <th>KELURAHAN</th>
             <th>CREATED AT</th>
             <th>UPDATED AT</th>
+            <th>Aksi</th>
           </tr>
           </thead>
           @foreach($data as $kelurahan )
@@ -26,6 +27,9 @@
             <td>{{ $kelurahan->KELURAHAN }}</td>
             <td>{{ $kelurahan->CREATED_AT }}</td>
             <td>{{ $kelurahan->UPDATED_AT }}</td>
+            <td>
+              <a href="#"><i class="far fa-edit"></i></a> |  <a href="#"><i class="fas fa-trash-alt" style="color :red"></i></a>
+            </td>
           </tr>
           @endforeach
         </table>

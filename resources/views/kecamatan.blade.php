@@ -8,6 +8,7 @@
       </div>
       <!-- /.card-header -->
       <div class="card-body">
+        <p><a href="#"<button type="button" class="btn btn-primary">Tambah Data</button></a></p>
         <table id="example1" class="table table-bordered table-striped">
           <thead>
           <tr>
@@ -15,6 +16,7 @@
             <th>Kecamatan</th>
             <th>Created_At</th>
             <th>Upadate_At</th>
+            <th>Aksi</th>
           </tr>
           </thead>
           @foreach($data as $kecamatan )
@@ -24,6 +26,9 @@
             <td>{{ $kecamatan->KECAMATAN }}</td>
             <td>{{ $kecamatan->CREATED_AT }}</td>
             <td>{{ $kecamatan->UPDATED_AT }}</td>
+            <td>
+              <a href="#"><i class="far fa-edit"></i></a> |  <a href="#"><i class="fas fa-trash-alt" style="color :red"></i></a>
+            </td>
 
           </tr>
           @endforeach
