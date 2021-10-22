@@ -210,33 +210,80 @@
                   <p>Role</p>
                 </a>
               </li>
-              <li class="nav-item has-treeview">
-                <a href="#" class="nav-link">
-                  <i class="far fa-question-circle"></i>
-                  <p>
-                    Bantuan
-                    <i class="fas fa-angle-left right"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="../mailbox/mailbox.html" class="nav-link">
-                      <i class="far fa-address-book"></i>
-                      <p>Kontak</p>
-                    </a>
-                  </li>
-               </ul>
-              </li>
-              <li class="nav-item">
-                <a href="../gallery.html" class="nav-link">
-                  <i class="fas fa-sign-out-alt"></i>
-                  <p>
-                    Logout
-                  </p>
-                </a>
-              </li>
+
+            </ul>
+            </li>
           </li>
 
+    
+                  <li class="nav-item has-treeview menu-open">
+                    <a class="nav-link active" href='#'>
+                      <i class="fas fa-file-alt"></i>
+                    <p>
+                      Data Transaksi
+                      <i class="fas fa-angle-left right"></i>
+                      <span class="badge badge-info right">2</span>
+
+                    </p>
+                  </a>
+
+                  <ul class="nav nav-treeview" style="display: block;">
+                    <li class="nav-item">
+                      <a href="/balita" class="nav-link">
+                        <i class="fas fa-baby-carriage"></i>
+                        <p>Balita</p>
+                      </a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a href="/history_posyandu" class="nav-link">
+                        <i class="fas fa-book"></i>
+                        <p>History_Posyandu</p>
+                      </a>
+                    </li>
+
+                    {{-- <li class="nav-item">
+                      <a class="nav-link" href ="../tables/simple.html">
+                        <i class="far fa-circle nav-icon">
+                        </i>
+                        <p>Ibu</p>
+                      </a>
+                    </li> --}}
+                  </ul>
+                  </li>   
+
+                    <li class="nav-item has-treeview">
+                      <a href="#" class="nav-link">
+                        <i class="far fa-question-circle"></i>
+                        <p>
+                          Bantuan
+                          <i class="fas fa-angle-left right"></i>
+                        </p>
+                      </a>
+                      <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                          <a href="../mailbox/mailbox.html" class="nav-link">
+                            <i class="far fa-address-book"></i>
+                            <p>Kontak</p>
+                          </a>
+                        </li>
+                    </ul>
+                    </li>
+                    <li class="nav-item">
+                      <a href="../gallery.html" class="nav-link">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <p>
+                          Logout
+                        </p>
+                      </a>
+                    </li>
+                  </li>
+              </li>
+
+                </ul>
+                </nav>
+
+                
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->

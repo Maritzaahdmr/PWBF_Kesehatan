@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KecamatanController;
 use App\Http\Controllers\KelurahanController;
 use App\Http\Controllers\PosyanduController;
-
+use App\Http\Controllers\BalitaController;
+use App\Http\Controllers\History_PosyanduController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,5 +60,6 @@ Route::get('/posyandu', [PosyanduController::class, 'index'] );
 Route::get('/createposyandu','App\Http\Controllers\PosyanduController@tambah');
 Route::post('/posyandu/store','App\Http\Controllers\PosyanduController@store');
 
-
+Route::get('/balita', [BalitaController::class, 'index'] );
+Route::get('/history_posyandu', [History_PosyanduController::class, 'index'] );
 ?>
