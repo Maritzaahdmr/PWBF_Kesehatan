@@ -8,6 +8,7 @@
       </div>
       <!-- /.card-header -->
       <div class="card-body">
+        <p><a href='createposyandu'<button type="button" class="btn btn-primary">Tambah Data</button></a></p>
         <table id="example1" class="table table-bordered table-striped">
           <div class="card-body">
             <p><a href="createposyandu"<button type="button" class="btn btn-primary">Tambah Data</button></a></p>
@@ -33,8 +34,7 @@
             {{-- <td>{{ $posyandu->CREATED_AT }}</td>
             <td>{{ $posyandu->UPDATED_AT }}</td> --}}
             <td>
-              <a href="#"><i class="far fa-edit"></i></a> |  <a href="#"><i class="fas fa-trash-alt" style="color :red"></i></a>
-            </td>
+              <a href="#"><i class="far fa-edit"></i></a> |  <a href="#"><i class="fas fa-trash-alt" style="color :red"></i></a>            </td>
           </tr>
           @endforeach
         </table>
