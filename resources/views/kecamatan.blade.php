@@ -2,34 +2,37 @@
 <html>
      @extends('home')
     @section('container')
-    <div class="card me-5">
+    <div class="card me-10">
       <div class="card-header">
         <h3 class="card-title">Data Kecamatan</h3>
       </div>
       <!-- /.card-header -->
       <div class="card-body">
-        <p><a href="{{route('kecamatan.create') }}"<button type="button" class="btn btn-primary">Tambah Data</button></a></p>
-        <table id="example1" class="table table-bordered table-striped">
+        <p><a href="createkecamatan"<button type="button" class="btn btn-primary">Tambah Data</button></a></p>
+        {{-- <table id="example1" class="table table-bordered table-striped"> --}}
+        <table id="bootstrap-data-table" class="table table-striped table-bordered">
           <thead>
           <tr>
-            <th>ID_Kecamatan</th>
+            <th>NO</th>
+            {{-- <th>ID</th> --}}
             <th>Kecamatan</th>
-            <th>Created_At</th>
-            <th>Upadate_At</th>
+            {{-- <th>Created_At</th>
+            <th>Upadate_At</th> --}}
             <th>Aksi</th>
           </tr>
           </thead>
           @foreach($data as $kecamatan )
           <tbody>
           <tr>
-            <td>{{ $kecamatan->ID_KECAMATAN }}</td>
+            <td>{{ $loop->iteration }}</td>
+            {{-- <td>{{ $kecamatan->ID_KECAMATAN }}</td> --}}
             <td>{{ $kecamatan->KECAMATAN }}</td>
-            <td>{{ $kecamatan->CREATED_AT }}</td>
-            <td>{{ $kecamatan->UPDATED_AT }}</td>
+            {{-- <td>{{ $kecamatan->CREATED_AT }}</td> --}}
+            {{-- <td>{{ $kecamatan->UPDATED_AT }}</td> --}}
             <td>
-              <a href="#"><i class="far fa-edit"></i></a> |  <a href="#"><i class="fas fa-trash-alt" style="color :red"></i></a>
+              <a href="#"><i class="far fa-edit"></i></a> |  <a href="hapuskec{{ $kecamatan->ID_KECAMATAN }}"><i class="fas fa-trash-alt" style="color :red"></i></a>
             </td>
-
+          
           </tr>
           @endforeach
    

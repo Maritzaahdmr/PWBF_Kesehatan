@@ -38,12 +38,26 @@ Route::get('/agenda', function () {
 Route::get('/', function () {
     return view('grafik');
 });
+// Route::get('/kecamatan/create', function () {
+//     return view('create');
+// });
 // Route::get('/', function () {
 //     return view('posyandu');
 // });
 Route::get('/kecamatan', [KecamatanController::class, 'index'] );
+
+Route::get('/createkecamatan','App\Http\Controllers\KecamatanController@tambah');
+Route::post('/kecamatan/store','App\Http\Controllers\KecamatanController@store');
+
 Route::get('/kelurahan', [kelurahanController::class, 'index'] );
+
+Route::get('/createkelurahan','App\Http\Controllers\KelurahanController@tambah');
+Route::post('/kelurahan/store','App\Http\Controllers\KelurahanController@store');
+
 Route::get('/posyandu', [PosyanduController::class, 'index'] );
+
+Route::get('/createposyandu','App\Http\Controllers\PosyanduController@tambah');
+Route::post('/posyandu/store','App\Http\Controllers\PosyanduController@store');
 
 
 ?>

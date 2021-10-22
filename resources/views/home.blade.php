@@ -206,18 +206,6 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/fixed-sidebar.html" class="nav-link">
-                  <i class="fas fa-clipboard-list"></i>
-                  <p>Daftar Posyandu Ibu Hamil</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/layout/fixed-sidebar.html" class="nav-link">
-                  <i class="fas fa-clipboard-list"></i>
-                  <p>Daftar Posyandu Balita</p>
-                </a>
-              </li>
-              <li class="nav-item">
                 <a href="pages/layout/fixed-topnav.html" class="nav-link">
                   <p>Role</p>
                 </a>
@@ -261,7 +249,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-12">
-            <h1 class="m-0 text-dark">Dashboard</h1>
+            {{-- <h1 class="m-0 text-dark">Dashboard</h1> --}}
             </div><!-- /.col -->
             @yield('container')
           </div><!-- /.col -->

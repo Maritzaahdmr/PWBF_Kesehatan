@@ -8,14 +8,15 @@
       </div>
       <!-- /.card-header -->
       <div class="card-body">
+          <p><a href="createkelurahan"<button type="button" class="btn btn-primary">Tambah Data</button></a></p>
         <table id="example1" class="table table-bordered table-striped">
           <thead>
           <tr>
             <th>ID KELURAHAN</th>
             <th>ID KECAMATAN</th>
             <th>KELURAHAN</th>
-            <th>CREATED AT</th>
-            <th>UPDATED AT</th>
+            {{-- <th>CREATED AT</th>
+            <th>UPDATED AT</th> --}}
             <th>Aksi</th>
           </tr>
           </thead>
@@ -25,8 +26,8 @@
             <td>{{ $kelurahan->ID_KELURAHAN }}</td>
             <td>{{ $kelurahan->ID_KECAMATAN }}</td>
             <td>{{ $kelurahan->KELURAHAN }}</td>
-            <td>{{ $kelurahan->CREATED_AT }}</td>
-            <td>{{ $kelurahan->UPDATED_AT }}</td>
+            {{-- <td>{{ $kelurahan->CREATED_AT }}</td>
+            <td>{{ $kelurahan->UPDATED_AT }}</td> --}}
             <td>
               <a href="#"><i class="far fa-edit"></i></a> |  <a href="#"><i class="fas fa-trash-alt" style="color :red"></i></a>
             </td>

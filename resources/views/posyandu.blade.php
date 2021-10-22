@@ -9,14 +9,17 @@
       <!-- /.card-header -->
       <div class="card-body">
         <table id="example1" class="table table-bordered table-striped">
+          <div class="card-body">
+            <p><a href="createposyandu"<button type="button" class="btn btn-primary">Tambah Data</button></a></p>
+          <table id="example1" class="table table-bordered table-striped">
           <thead>
           <tr>
             <th>ID POSYANDU</th>
             <th>ID KELURAHAN</th>
             <th>NAMA POSYANDU</th>
             <th>ALAMAT POSYANDU</th>
-            <th>CREATED AT</th>
-            <th>UPDATED AT</th>
+            {{-- <th>CREATED AT</th>
+            <th>UPDATED AT</th> --}}
             <th>Aksi</th>
           </tr>
           </thead>
@@ -27,8 +30,8 @@
             <td>{{ $posyandu->ID_KELURAHAN }}</td>
             <td>{{ $posyandu->NAMA_POSYANDU }}</td>
             <td>{{ $posyandu->ALAMAT_POSYANDU }}</td>
-            <td>{{ $posyandu->CREATED_AT }}</td>
-            <td>{{ $posyandu->UPDATED_AT }}</td>
+            {{-- <td>{{ $posyandu->CREATED_AT }}</td>
+            <td>{{ $posyandu->UPDATED_AT }}</td> --}}
             <td>
               <a href="#"><i class="far fa-edit"></i></a> |  <a href="#"><i class="fas fa-trash-alt" style="color :red"></i></a>
             </td>
