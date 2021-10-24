@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\kelurahan;
 use App\Models\kecamatan;
+use App\createkelurahan;
 
 class KelurahanController extends Controller
 {
@@ -50,6 +51,31 @@ class KelurahanController extends Controller
 
     }
 
+    // method untuk edit data siswa
+    public function edit($id){ 
+    // mengambil data siswa berdasarkan id yang dipilih
+    $kelurahan = DB::table('kelurahan')->where('ID_KELURAHAN',$id)->get(); 
+    
+    // passing data siswa yang didapat ke view edit.blade.php 
+    return view('editkelurahan',['kelurahan' => $kelurahan]);
+    }
 
+    public function update(Request $request){
+        // update data siswa
+        DB::table('kelurahan')->where('ID_KELURAHAN',$request->id)->update([
+            'KELURAHAN' => $request->Kelurahan,
+        ]);
+    
+        // alihkan halaman ke halaman siswa
+        return redirect('/kelurahan');
+        }
+
+    public function delete($id){
+        // menghapus data siswa berdasarkan id yang dipilih
+        DB::table('kelurahan')->where('ID_KELURAHAN',$id)->delete();
+        
+        // alihkan halaman ke halaman siswa
+        return redirect('/kelurahan');
+        }
 }
 ?>

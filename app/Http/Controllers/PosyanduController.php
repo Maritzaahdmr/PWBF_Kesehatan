@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Posyandu;
 use App\Models\Kelurahan;
+use App\createposyandu;
+
 
 class PosyanduController extends Controller
 {
@@ -52,6 +54,26 @@ class PosyanduController extends Controller
 
     }
 
+    // method untuk edit data siswa
+    public function edit($id){ 
+    // mengambil data siswa berdasarkan id yang dipilih
+    $posyandu = DB::table('posyandu')->where('ID_POSYANDU',$id)->get(); 
+    
+    // passing data siswa yang didapat ke view edit.blade.php 
+    return view('editposyandu',['posyandu' => $posyandu]);
+    }
 
+    public function update(Request $request){
+        // update data siswa
+        DB::table('posyandu')->where('ID_POSYANDU',$request->id)->update([
+            'NAMA_POSYANDU' => $request->Posyandu,
+            'ALAMAT_POSYANDU' => $request->Al_Posyandu,
+
+        ]);
+    
+        // alihkan halaman ke halaman siswa
+        return redirect('/posyandu');
+        }
+    
 }
 ?>
