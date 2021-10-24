@@ -8,33 +8,34 @@
       </div>
       <!-- /.card-header -->
       <div class="card-body">
-        {{-- <p><a href="{{route('kecamatan.create') }}"<button type="button" class="btn btn-primary">Tambah Data</button></a></p> --}}
+        <p><a href="createbalita"<button type="button" class="btn btn-primary">Tambah Data</button></a></p>
         <table id="example1" class="table table-bordered table-striped">
           <thead>
           <tr>
             <th>ID_Balita</th>
-            <th>ID_Posyandu</th>
-            <th>Nama_Balita</th>
-            <th>NIK_Orang_Tua</th>
-            <th>Nama_Orang_Tua</th>
-            <th>TGL_Lahir_Balita</th>
-            <th>Jenis_Kelamin_Balita</th>
+            <th>ID Posyandu</th>
+            <th>Nama Balita</th>
+            <th>NIK</th>
+            <th>Nama Orang Tua</th>
+            <th>TGL Lahir Balita</th>
+            <th>Jenis Kelamin Balita</th>
             <th>Status</th>
-            {{-- <th>Aksi</th> --}}
+            <th>Aksi</th>
           </tr>
           </thead>
-          @foreach($data as $Balita )
+          @foreach($data as $balita )
           <tbody>
           <tr>
-            <td>{{ $Balita->ID_BALITA }}</td>
-            <td>{{ $Balita->ID_POSYANDU }}</td>
-            <td>{{ $Balita->NAMA_BALITA }}</td>
-            <td>{{ $Balita->NIK_ORANG_TUA }}</td>
-            <td>{{ $Balita->NAMA_ORANG_TUA }}</td>
-            <td>{{ $Balita->TGL_LAHIR_BALITA }}</td>
-            <td>{{ $Balita->JENIS_KELAMIN_BALITA }}</td>
-            <td>{{ $Balita->STATUS }}</td>
-              {{-- <a href="#"><i class="far fa-edit"></i></a> |  <a href="#"><i class="fas fa-trash-alt" style="color :red"></i></a> --}}
+            <td>{{ $balita->ID_BALITA }}</td>
+            <td>{{ $balita->ID_POSYANDU }}</td>
+            <td>{{ $balita->NAMA_BALITA }}</td>
+            <td>{{ $balita->NIK_ORANG_TUA }}</td>
+            <td>{{ $balita->NAMA_ORANG_TUA }}</td>
+            <td>{{ $balita->TGL_LAHIR_BALITA }}</td>
+            <td>{{ $balita->JENIS_KELAMIN_BALITA }}</td>
+            <td>{{ $balita->STATUS }}</td>
+            <td>
+              <a href="#"><i class="far fa-edit"></i></a> |  <a href="#"><i class="fas fa-trash-alt" style="color :red"></i></a>
             </td>
 
           </tr>

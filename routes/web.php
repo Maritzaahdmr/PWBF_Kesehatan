@@ -61,5 +61,8 @@ Route::get('/createposyandu','App\Http\Controllers\PosyanduController@tambah');
 Route::post('/posyandu/store','App\Http\Controllers\PosyanduController@store');
 
 Route::get('/balita', [BalitaController::class, 'index'] );
+Route::get('/createbalita','App\Http\Controllers\BalitaController@tambah');
+Route::post('/balita/store','App\Http\Controllers\BalitaController@store');
+
 Route::get('/history_posyandu', [History_PosyanduController::class, 'index'] );
 ?>

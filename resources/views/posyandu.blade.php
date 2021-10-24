@@ -10,6 +10,13 @@
           <div class="card-body">
             <p><a href="createposyandu"<button type="button" class="btn btn-primary">Tambah Data</button></a></p>
           <table id="example1" class="table table-bordered table-striped">
+            <div class="table-responsive">
+              <div id="dataTable_wrapper" class="dataTable_wrapper dt-boostrap4">
+              <div class="row">
+                  <div class="col-sm-12 col-md-6">
+                    <div class="dataTables_length" id="dataTable_length">
+                      <label>
+                        "show"
           <thead>
           <tr>
             <th>ID POSYANDU</th>
@@ -32,9 +39,15 @@
             <td>{{ $posyandu->UPDATED_AT }}</td> --}}
             <td>
               <a href="#"><i class="far fa-edit"></i></a> |  <a href="#"><i class="fas fa-trash-alt" style="color :red"></i></a>            </td>
-          </tr>
+            
+            </tr>
           @endforeach
         </table>
+      </label>
+    </div> 
+  </div>
+</div>
+</div>
       </div>
       <!-- /.card-body -->
     </div>
