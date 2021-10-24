@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\kecamatan;
 use App\createkecamatan;
+
 class KecamatanController extends Controller
 {
     public function index(){
@@ -43,9 +44,36 @@ class KecamatanController extends Controller
             </script>
             ";
         }
-
-
     }
+    // method untuk edit data siswa
+    public function edit($id){ 
+    // mengambil data siswa berdasarkan id yang dipilih
+    $kecamatan = DB::table('kecamatan')->where('ID_KECAMATAN',$id)->get(); 
+    
+    // passing data siswa yang didapat ke view edit.blade.php 
+    return view('editkecamatan',['kecamatan' => $kecamatan]);
+    }
+
+    public function update(Request $request){
+    // update data siswa
+    DB::table('kecamatan')->where('ID_KECAMATAN',$request->id)->update([
+        'KECAMATAN' => $request->Kecamatan,
+    ]);
+
+    // alihkan halaman ke halaman siswa
+    return redirect('/kecamatan');
+    }
+
+    public function delete($id){
+        // menghapus data siswa berdasarkan id yang dipilih
+        DB::table('kecamatan')->where('ID_KECAMATAN',$id)->delete();
+        
+        // alihkan halaman ke halaman siswa
+        return redirect('/kecamatan');
+        }
+    
+    
+    
 
 
         //insert data ke table kecamatan

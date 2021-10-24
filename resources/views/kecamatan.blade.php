@@ -30,7 +30,7 @@
             {{-- <td>{{ $kecamatan->CREATED_AT }}</td> --}}
             {{-- <td>{{ $kecamatan->UPDATED_AT }}</td> --}}
             <td>
-              <a href="#"><i class="far fa-edit"></i></a> |  <a href="hapuskec{{ $kecamatan->ID_KECAMATAN }}"><i class="fas fa-trash-alt" style="color :red"></i></a>
+              <a href="/editkecamatan{{ $kecamatan->ID_KECAMATAN }}"><i class="far fa-edit"></i></a> |  <a href="deletekecamatan{{ $kecamatan->ID_KECAMATAN }}"><i class="fas fa-trash-alt" style="color :red"></i></a>
             </td>
           
           </tr>
