@@ -12,13 +12,13 @@
         <table id="example1" class="table table-bordered table-striped">
           <thead>
           <tr>
-            <th>ID_Balita</th>
+            <th>ID Balita</th>
             <th>ID Posyandu</th>
             <th>Nama Balita</th>
             <th>NIK</th>
-            <th>Nama Orang Tua</th>
+            <th>Nama Ortu</th>
             <th>TGL Lahir Balita</th>
-            <th>Jenis Kelamin Balita</th>
+            <th>JK Balita</th>
             <th>Status</th>
             <th>Aksi</th>
           </tr>

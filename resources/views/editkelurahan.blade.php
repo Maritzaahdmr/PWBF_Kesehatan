@@ -30,6 +30,10 @@
             </select>
             </div> --}}
             <div class="form-group">
+                <label class="">ID Kecamatan</label>
+                <input type="number" name="id_kec" class="form-control" value="{{ $data->KELURAHAN }}" required="required"  ></td>
+                <input type="hidden" name="id" class="form-control" value="{{ $data->ID_KELURAHAN }}" value=""/>             </div>
+            <div class="form-group">
                 <label class="">Kelurahan</label>
                 <input type="text" name="Kelurahan" class="form-control" value="{{ $data->KELURAHAN }}" required="required"  axlegenght="30" size="50"></td>
                 <input type="hidden" name="id" class="form-control" value="{{ $data->ID_KELURAHAN }}" value=""/>             </div>

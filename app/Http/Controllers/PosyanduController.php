@@ -66,6 +66,7 @@ class PosyanduController extends Controller
     public function update(Request $request){
         // update data siswa
         DB::table('posyandu')->where('ID_POSYANDU',$request->id)->update([
+            'ID_KELURAHAN' => $request->id_kel,
             'NAMA_POSYANDU' => $request->Posyandu,
             'ALAMAT_POSYANDU' => $request->Al_Posyandu,
 

@@ -63,6 +63,7 @@ class KelurahanController extends Controller
     public function update(Request $request){
         // update data siswa
         DB::table('kelurahan')->where('ID_KELURAHAN',$request->id)->update([
+            'ID_KECAMATAN' => $request-> id_kec,
             'KELURAHAN' => $request->Kelurahan,
         ]);
     
