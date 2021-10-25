@@ -73,10 +73,14 @@ Route::post('/posyandu/update','App\Http\Controllers\PosyanduController@update')
 Route::get('/balita', [BalitaController::class, 'index'] );
 Route::get('/createbalita','App\Http\Controllers\BalitaController@tambah');
 Route::post('/balita/store','App\Http\Controllers\BalitaController@store');
+Route::get('/editbalita{ID_BALITA}','App\Http\Controllers\BalitaController@edit');
+Route::post('/balita/update','App\Http\Controllers\BalitaController@update');
 
 Route::get('/role', [RoleController::class, 'index'] );
 Route::get('/createrole','App\Http\Controllers\RoleController@tambah');
 Route::post('/role/store','App\Http\Controllers\RoleController@store');
+Route::get('/editrole{ID_ROLE}','App\Http\Controllers\RoleController@edit');
+Route::post('/role/update','App\Http\Controllers\RoleController@update');
 
 Route::get('/history_posyandu', [History_PosyanduController::class, 'index'] );
 ?>

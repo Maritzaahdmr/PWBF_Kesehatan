@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Balita;
 use App\Models\Posyandu;
+use App\createbalita;
 
 class BalitaController extends Controller
 {
@@ -54,6 +55,34 @@ class BalitaController extends Controller
 
 
     }
+
+    // method untuk edit data siswa
+    public function edit($id){ 
+    // mengambil data siswa berdasarkan id yang dipilih
+    $balita = DB::table('balita')->where('ID_BALITA',$id)->get(); 
+    
+    // passing data siswa yang didapat ke view edit.blade.php 
+    return view('editbalita',['balita' => $balita]);
+    }
+
+    public function update(Request $request){
+        // update data siswa
+        DB::table('balita')->where('ID_BALITA',$request->id)->update([
+            'ID_POSYANDU' => $request->id_pos,
+            'NAMA_BALITA' => $request->balita,
+            'NIK_ORANG_TUA' => $request->NIK,
+            'NAMA_ORANG_TUA' => $request->nama,
+            'TGL_LAHIR_BALITA' => $request->tgl,
+            'JENIS_KELAMIN_BALITA' => $request->jk,
+            'STATUS' => $request->status,
+
+
+        ]);
+    
+        // alihkan halaman ke halaman siswa
+        return redirect('/balita');
+        }
+    
 
 }
 ?>

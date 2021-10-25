@@ -45,32 +45,24 @@ public function store(Request $request){
         ";
     }
 }
-// // method untuk edit data kecamatan
-// public function edit($id){ 
-// // mengambil data kecamatan berdasarkan id yang dipilih
-// $kecamatan = DB::table('kecamatan')->where('ID_KECAMATAN',$id)->get(); 
-
-// // passing data siswa yang didapat ke view edit.blade.php 
-// return view('editkecamatan',['kecamatan' => $kecamatan]);
-// }
-
-// public function update(Request $request){
-// // update data siswa
-// DB::table('kecamatan')->where('ID_KECAMATAN',$request->id)->update([
-//     'KECAMATAN' => $request->Kecamatan,
-// ]);
-
-// // alihkan halaman ke halaman siswa
-// return redirect('/kecamatan');
-// }
-
-// public function delete($id){
-//     // menghapus data siswa berdasarkan id yang dipilih
-//     DB::table('kecamatan')->where('ID_KECAMATAN',$id)->delete();
+     // method untuk edit data siswa
+     public function edit($id){ 
+        // mengambil data siswa berdasarkan id yang dipilih
+        $role = DB::table('role')->where('ID_ROLE',$id)->get(); 
+        
+        // passing data siswa yang didapat ke view edit.blade.php 
+        return view('editrole',['role' => $role]);
+        }
     
-//     // alihkan halaman ke halaman siswa
-//     return redirect('/kecamatan');
-//     }
-
-// }
+        public function update(Request $request){
+            // update data siswa
+            DB::table('role')->where('ID_ROLE',$request->id)->update([
+                'ROLE' => $request->Role,
+    
+            ]);
+        
+            // alihkan halaman ke halaman siswa
+            return redirect('/role');
+            }
+        
 }
