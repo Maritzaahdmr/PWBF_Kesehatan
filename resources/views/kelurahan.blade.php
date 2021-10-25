@@ -29,7 +29,7 @@
             {{-- <td>{{ $kelurahan->CREATED_AT }}</td>
             <td>{{ $kelurahan->UPDATED_AT }}</td> --}}
             <td>
-              <a href="/editkelurahan{{ $kelurahan->ID_KELURAHAN }}"><i class="far fa-edit"></i></a> |  <a href="deletekelurahan{{ $kelurahan->ID_KELURAHAN }}"><i class="fas fa-trash-alt" style="color :red"></i></a>
+              <a href="/editkelurahan{{ $kelurahan->ID_KELURAHAN }}"><i class="far fa-edit"></i></a> |  <a href="hapuskelurahan{{ $kelurahan->ID_KELURAHAN }}"><i class="fas fa-trash-alt" style="color :red"></i></a>
             </td>
           </tr>
           @endforeach

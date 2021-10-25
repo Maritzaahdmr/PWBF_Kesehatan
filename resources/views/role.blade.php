@@ -1,43 +1,36 @@
 <!DOCTYPE html>
 <html>
-     @extends('home')
+    @extends('home')
     @section('container')
-    <div class="card me-10">
+    <div class="card">
       <div class="card-header">
-        <h3 class="card-title">Data Kecamatan</h3>
+        <h3 class="card-title">Data Role </h3>
       </div>
       <!-- /.card-header -->
       <div class="card-body">
-        <p><a href="createkecamatan"<button type="button" class="btn btn-primary">Tambah Data</button></a></p>
-        {{-- <table id="example1" class="table table-bordered table-striped"> --}}
-        <table id="bootstrap-data-table" class="table table-striped table-bordered">
+          <p><a href="createrole"<button type="button" class="btn btn-primary">Tambah Data</button></a></p>
+        <table id="example1" class="table table-bordered table-striped">
           <thead>
           <tr>
-            <th>NO</th>
-            {{-- <th>ID</th> --}}
-            <th>Kecamatan</th>
-            {{-- <th>Created_At</th>
-            <th>Upadate_At</th> --}}
+            <th>ID ROLE</th>
+            <th>NAMA ROLE</th>
+            {{-- <th>CREATED AT</th>
+            <th>UPDATED AT</th> --}}
             <th>Aksi</th>
           </tr>
           </thead>
-          @foreach($data as $kecamatan )
+          @foreach($data as $role )
           <tbody>
           <tr>
-            <td>{{ $loop->iteration }}</td>
-            {{-- <td>{{ $kecamatan->ID_KECAMATAN }}</td> --}}
-            <td>{{ $kecamatan->KECAMATAN }}</td>
-            {{-- <td>{{ $kecamatan->CREATED_AT }}</td> --}}
-            {{-- <td>{{ $kecamatan->UPDATED_AT }}</td> --}}
+            <td>{{ $role->ID_ROLE }}</td>
+            <td>{{ $role->ROLE }}</td>
+            {{-- <td>{{ $kelurahan->CREATED_AT }}</td>
+            <td>{{ $kelurahan->UPDATED_AT }}</td> --}}
             <td>
-              <a href="/editkecamatan{{ $kecamatan->ID_KECAMATAN }}"><i class="far fa-edit"></i></a> |  <a href="hapuskecamatan{{ $kecamatan->ID_KECAMATAN }}"><i class="fas fa-trash-alt" style="color :red"></i></a>
+              <a href=""><i class="far fa-edit"></i></a> |  <a href=""><i class="fas fa-trash-alt" style="color :red"></i></a>
             </td>
-          
           </tr>
           @endforeach
-   
-          </tbody>
-         
         </table>
       </div>
       <!-- /.card-body -->

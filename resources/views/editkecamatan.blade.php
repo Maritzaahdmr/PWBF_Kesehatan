@@ -26,7 +26,7 @@
             </div> --}}
             <div class="form-group">
                 <label class="">Kecamatan</label>
-                  <input type="text" name="Kecamatan" class="form-control" value="{{ $data->KECAMATAN }}" required="required"  ></td>
+                  <input type="text" name="Kecamatan" class="form-control" value="{{ $data->KECAMATAN }}" required="required" axlegenght="30" size="50" ></td>
                   <input type="hidden" name="id" class="form-control" value="{{ $data->ID_KECAMATAN }}" value=""/>
              </div>
              {{-- <div class="form-group">

@@ -3,13 +3,12 @@
      @extends('home')
     @section('container')
     <div class="card">
-        @foreach($posyandu as $data )
       <div class="card-header">
         <div class ="pull-left">
-        <strong>Edit Data Posyandu</strong>
+        <strong>Tambah Data Role</strong>
         </div>
       <div class="pull-left">
-        <a href="/posyandu" class="btn btn-secondary btn-sm">
+        <a href="/role" class="btn btn-secondary btn-sm">
           <i class= "fa fa-undo"></i>Back
         </a>
       </div>
@@ -17,31 +16,17 @@
       <!-- /.card-header -->
       <div class="card-body">
         <div class="row">
-            <div class="col-md-4 offset-md-4">
-        <form action="/posyandu/update" method="post">
+            <div class="col-md-10 offset-md-4">
+        <form action="/role/store" method="post">
           @csrf
             {{-- <div class="form-group">
-            <label class="">id_kelurahan</label>
-            <select name="id_kel" class="form-control">
-              <option value="">-pilih-</option>
-                  @foreach ($kelurahans as $data)
-              <option value="{{ $data->ID_KELURAHAN }}">{{ $data->KELURAHAN }}</option>
-              @endforeach
-            </select>
+            <label class="">id_kecamatan</label>
+              <input type="number" name="id_kecamatan"  required="required" ></td>
             </div> --}}
             <div class="form-group">
-                <label class="">Posyandu</label>
-                  <input type="text" name="Posyandu" class="form-control" value="{{ $data->NAMA_POSYANDU }}" required="required" axlegenght="30" size="50"  ></td>
-                  <input type="hidden" name="id" class="form-control" value="{{ $data->ID_POSYANDU }}" value=""/>    
-            </div>
-                
-             <div class="form-group">
-                <label class="">Alamat</label>
-                  <input type="text" name="Al_Posyandu" class="form-control" value="{{ $data->ALAMAT_POSYANDU }}" required="required"  ></td>
-                  <input type="hidden" name="id" class="form-control" value="{{ $data->ID_POSYANDU }}" value=""/>             
-            </div>
-
-             
+                <label class="">Nama Role</label>
+                  <input type="text" name="Role"  required="required"  ></td>
+             </div>
              {{-- <div class="form-group">
               <label class="">Created_At</label>
                 <input type="datetime-local" name="Created_At" required="required"></td>
@@ -59,7 +44,6 @@
     </div>
     <!-- /.card -->
   </div>
-  @endforeach
   <!-- /.col -->
 </div>
 <!-- /.row -->

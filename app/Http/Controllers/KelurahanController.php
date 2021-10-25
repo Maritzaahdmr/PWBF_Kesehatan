@@ -12,7 +12,7 @@ class KelurahanController extends Controller
 {
     public function index(){
         //ambil data dari table kelurahan
-        $kelurahan = DB::table('kelurahan')->get();
+        $kelurahan = DB::table('kelurahan')->where('DELETED_AT',null)->get();
 
         // mengirim data ke view kelurahan
         return view('kelurahan', [
@@ -70,12 +70,22 @@ class KelurahanController extends Controller
         return redirect('/kelurahan');
         }
 
-    public function delete($id){
-        // menghapus data siswa berdasarkan id yang dipilih
-        DB::table('kelurahan')->where('ID_KELURAHAN',$id)->delete();
+    // public function delete($id){
+    //     // menghapus data siswa berdasarkan id yang dipilih
+    //     DB::table('kelurahan')->where('ID_KELURAHAN',$id)->delete();
         
-        // alihkan halaman ke halaman siswa
-        return redirect('/kelurahan');
-        }
+    //     // alihkan halaman ke halaman siswa
+    //     return redirect('/kelurahan');
+    //     }
+
+    public function hapus($id){
+        date_default_timezone_set('Asia/Jakarta');
+    	DB::table('kelurahan')->where('ID_KELURAHAN',$id)->update([
+            'DELETED_AT' => date('Y-m-d H:i:s')
+        ]);
+ 
+    	return redirect('/kelurahan');
+    }
+
 }
 ?>

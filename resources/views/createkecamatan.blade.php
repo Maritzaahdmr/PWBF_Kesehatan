@@ -25,7 +25,7 @@
             </div> --}}
             <div class="form-group">
                 <label class="">Kecamatan</label>
-                  <input type="text" name="Kecamatan"  required="required"  ></td>
+                  <input type="text" name="Kecamatan"  required="required" ></td>
              </div>
              {{-- <div class="form-group">
               <label class="">Created_At</label>

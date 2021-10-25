@@ -11,7 +11,7 @@ class KecamatanController extends Controller
 {
     public function index(){
         //ambil data dari table kecamatan
-        $kecamatan = DB::table('kecamatan')->get();
+        $kecamatan = DB::table('kecamatan')->where('DELETED_AT',null)->get();
 
         // mengirim data ke view kecamatan
         return view('kecamatan', [
@@ -45,9 +45,9 @@ class KecamatanController extends Controller
             ";
         }
     }
-    // method untuk edit data siswa
+    // method untuk edit data kecamatan
     public function edit($id){ 
-    // mengambil data siswa berdasarkan id yang dipilih
+    // mengambil data kecamatan berdasarkan id yang dipilih
     $kecamatan = DB::table('kecamatan')->where('ID_KECAMATAN',$id)->get(); 
     
     // passing data siswa yang didapat ke view edit.blade.php 
@@ -64,16 +64,24 @@ class KecamatanController extends Controller
     return redirect('/kecamatan');
     }
 
-    public function delete($id){
-        // menghapus data siswa berdasarkan id yang dipilih
-        DB::table('kecamatan')->where('ID_KECAMATAN',$id)->delete();
+    // public function delete($id){
+    //     // menghapus data siswa berdasarkan id yang dipilih
+    //     DB::table('kecamatan')->where('ID_KECAMATAN',$id)->delete();
         
-        // alihkan halaman ke halaman siswa
-        return redirect('/kecamatan');
-        }
+    //     // alihkan halaman ke halaman siswa
+    //     return redirect('/kecamatan');
+    //     }
     
     
-    
+    public function hapus($id){
+        date_default_timezone_set('Asia/Jakarta');
+    	DB::table('kecamatan')->where('ID_KECAMATAN',$id)->update([
+            'DELETED_AT' => date('Y-m-d H:i:s')
+        ]);
+        
+    	return redirect('/kecamatan');
+        
+    }
 
 
         //insert data ke table kecamatan

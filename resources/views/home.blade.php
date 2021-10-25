@@ -206,7 +206,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/fixed-topnav.html" class="nav-link">
+                <a href="/role" class="nav-link">
                   <p>Role</p>
                 </a>
               </li>
