@@ -69,12 +69,15 @@ Route::get('/createposyandu','App\Http\Controllers\PosyanduController@tambah');
 Route::post('/posyandu/store','App\Http\Controllers\PosyanduController@store');
 Route::get('/editposyandu{ID_POSYANDU}','App\Http\Controllers\PosyanduController@edit');
 Route::post('/posyandu/update','App\Http\Controllers\PosyanduController@update');
+Route::get('/hapusposyandu{ID_POSYANDU}','App\Http\Controllers\PosyanduController@hapus');
 
 Route::get('/balita', [BalitaController::class, 'index'] );
+
 Route::get('/createbalita','App\Http\Controllers\BalitaController@tambah');
 Route::post('/balita/store','App\Http\Controllers\BalitaController@store');
 Route::get('/editbalita{ID_BALITA}','App\Http\Controllers\BalitaController@edit');
 Route::post('/balita/update','App\Http\Controllers\BalitaController@update');
+Route::get('/hapusbalita{ID_BALITA}','App\Http\Controllers\BalitaController@hapus');
 
 Route::get('/role', [RoleController::class, 'index'] );
 Route::get('/createrole','App\Http\Controllers\RoleController@tambah');

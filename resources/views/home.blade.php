@@ -206,6 +206,12 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a href="/balita" class="nav-link">
+                  <i class="fas fa-baby-carriage"></i>
+                  <p>Balita</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="/role" class="nav-link">
                   <p>Role</p>
                 </a>
@@ -217,7 +223,7 @@
 
     
                   <li class="nav-item has-treeview menu-open">
-                    <a class="nav-link active" href='#'>
+                    <a class="nav-link" href='#'>
                       <i class="fas fa-file-alt"></i>
                     <p>
                       Data Transaksi
@@ -228,12 +234,7 @@
                   </a>
 
                   <ul class="nav nav-treeview" style="display: block;">
-                    <li class="nav-item">
-                      <a href="/balita" class="nav-link">
-                        <i class="fas fa-baby-carriage"></i>
-                        <p>Balita</p>
-                      </a>
-                    </li>
+                    
 
                     <li class="nav-item">
                       <a href="/history_posyandu" class="nav-link">
