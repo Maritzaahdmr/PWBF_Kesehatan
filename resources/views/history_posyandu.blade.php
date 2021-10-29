@@ -8,18 +8,18 @@
       </div>
       <!-- /.card-header -->
       <div class="card-body">
-        {{-- <p><a href="{{route('kecamatan.create') }}"<button type="button" class="btn btn-primary">Tambah Data</button></a></p> --}}
+        <p><a href="createhistory_posyandu"<button type="button" class="btn btn-primary">Tambah Data</button></a></p>
         <table id="example1" class="table table-bordered table-striped">
           <thead>
           <tr>
             <th>ID History Posyandu</th>
             <th>ID Balita</th>
             <th>Tgl Posyandu</th>
-            <th>Berat Badan Balita</th>
-            <th>Tinggi Badan</th>
+            <th>Berat Badan Balita (Kg)</th>
+            <th>Tinggi Badan (Cm)</th>
             {{-- <th>Created_At</th>
             <th>Updated_At</th> --}}
-            {{-- <th>Aksi</th> --}}
+            <th>Aksi</th>
           </tr>
           </thead>
           @foreach($data as $history_posyandu )
@@ -30,9 +30,10 @@
             <td>{{ $history_posyandu->TGL_POSYANDU }}</td>
             <td>{{ $history_posyandu->BERAT_BADAN_BALITA }}</td>
             <td>{{ $history_posyandu->TINGGI_BADAN }}</td>
-            <td>{{ $history_posyandu->CREATED_AT }}</td>
-            <td>{{ $history_posyandu->UPDATED_AT }}</td>
-              {{-- <a href="#"><i class="far fa-edit"></i></a> |  <a href="#"><i class="fas fa-trash-alt" style="color :red"></i></a> --}}
+            {{-- <td>{{ $history_posyandu->CREATED_AT }}</td>
+            <td>{{ $history_posyandu->UPDATED_AT }}</td> --}}
+            <td>
+              <a href="edithistory_posyandu{{ $history_posyandu->ID_HISTORY_POSYANDU }}"><i class="far fa-edit"></i></a> |  <a href="#"><i class="fas fa-trash-alt" style="color :red"></i></a>
             </td>
 
           </tr>

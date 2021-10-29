@@ -83,4 +83,9 @@ Route::get('/editrole{ID_ROLE}','App\Http\Controllers\RoleController@edit');
 Route::post('/role/update','App\Http\Controllers\RoleController@update');
 
 Route::get('/history_posyandu', [History_PosyanduController::class, 'index'] );
+Route::get('/createhistory_posyandu','App\Http\Controllers\History_PosyanduController@tambah');
+Route::post('/history_posyandu/store','App\Http\Controllers\History_PosyanduController@store');
+Route::get('/edithistory_posyandu{ID_HISTORY_POSYANDU}','App\Http\Controllers\History_PosyanduController@edit');
+Route::post('/history_posyandu/update','App\Http\Controllers\History_PosyanduController@update');
+
 ?>
