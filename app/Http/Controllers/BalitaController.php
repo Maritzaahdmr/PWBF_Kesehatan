@@ -12,7 +12,7 @@ class BalitaController extends Controller
 {
     public function index(){
         //ambil data dari table kelurahan
-        $balita = DB::table('balita')->get();
+        $balita = DB::table('balita')->where('DELETED_AT',null)->get();
 
         // mengirim data ke view kelurahan
         return view('balita', [
@@ -81,6 +81,16 @@ class BalitaController extends Controller
     
         // alihkan halaman ke halaman siswa
         return redirect('/balita');
+        }
+
+        public function hapus($id){
+            date_default_timezone_set('Asia/Jakarta');
+            DB::table('balita')->where('ID_BALITA',$id)->update([
+                'DELETED_AT' => date('Y-m-d H:i:s')
+            ]);
+            
+            return redirect('/balita');
+            
         }
     
 

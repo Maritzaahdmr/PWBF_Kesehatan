@@ -27,7 +27,7 @@
             {{-- <td>{{ $kelurahan->CREATED_AT }}</td>
             <td>{{ $kelurahan->UPDATED_AT }}</td> --}}
             <td>
-              <a href="/editrole{{ $role->ID_ROLE }}"><i class="far fa-edit"></i></a> |  <a href=""><i class="fas fa-trash-alt" style="color :red"></i></a>
+              <a href="/editrole{{ $role->ID_ROLE }}"><i class="far fa-edit"></i></a> |  <a href="/hapusrole{{ $role->ID_ROLE }}"><i class="fas fa-trash-alt" style="color :red"></i></a>
             </td>
           </tr>
           @endforeach

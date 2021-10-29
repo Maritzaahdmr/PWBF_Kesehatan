@@ -11,7 +11,7 @@ class RoleController extends Controller
 {
     public function index(){
         //ambil data dari table role
-        $role = DB::table('role')->get();
+        $role = DB::table('role')->where('DELETED_AT',null)->get();
 
         // mengirim data ke view role
         return view('role', [
@@ -64,5 +64,14 @@ public function store(Request $request){
             // alihkan halaman ke halaman siswa
             return redirect('/role');
             }
-        
+
+            public function hapus($id){
+                date_default_timezone_set('Asia/Jakarta');
+                DB::table('role')->where('ID_ROLE',$id)->update([
+                    'DELETED_AT' => date('Y-m-d H:i:s')
+                ]);
+         
+                return redirect('/role');
+            }
+    
 }

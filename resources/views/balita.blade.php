@@ -35,7 +35,7 @@
             <td>{{ $balita->JENIS_KELAMIN_BALITA }}</td>
             <td>{{ $balita->STATUS }}</td>
             <td>
-              <a href="/editbalita{{ $balita->ID_BALITA }}"><i class="far fa-edit"></i></a> |  <a href="#"><i class="fas fa-trash-alt" style="color :red"></i></a>
+              <a href="/editbalita{{ $balita->ID_BALITA }}"><i class="far fa-edit"></i></a> |  <a href="/hapusbalita{{ $balita->ID_BALITA }}"><i class="fas fa-trash-alt" style="color :red"></i></a>
             </td>
 
           </tr>
