@@ -31,7 +31,7 @@
             {{-- <td>{{ $posyandu->CREATED_AT }}</td>
             <td>{{ $posyandu->UPDATED_AT }}</td> --}}
             <td>
-              <a href="/editposyandu{{ $posyandu->ID_POSYANDU }}"><i class="far fa-edit"></i></a> |  <a href="#"><i class="fas fa-trash-alt" style="color :red"></i></a>
+              <a href="/editposyandu{{ $posyandu->ID_POSYANDU }}"><i class="far fa-edit"></i></a> |  <a href="/hapusposyandu{{ $posyandu->ID_POSYANDU }}"><i class="fas fa-trash-alt" style="color :red"></i></a>
             </td>
           </tr>
           @endforeach

@@ -14,7 +14,7 @@ class PosyanduController extends Controller
 {
     public function index(){
         //ambil data dari table posyandu
-        $posyandu = DB::table('posyandu')->get();
+        $posyandu = DB::table('posyandu')->where('DELETED_AT',null)->get();
 
         // mengirim data ke view kelurahan
         return view('posyandu', [
@@ -74,6 +74,15 @@ class PosyanduController extends Controller
     
         // alihkan halaman ke halaman siswa
         return redirect('/posyandu');
+        }
+
+        public function hapus($id){
+            date_default_timezone_set('Asia/Jakarta');
+            DB::table('posyandu')->where('ID_POSYANDU',$id)->update([
+                'DELETED_AT' => date('Y-m-d H:i:s')
+            ]);
+     
+            return redirect('/posyandu');
         }
     
 }
