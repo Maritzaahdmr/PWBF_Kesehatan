@@ -85,5 +85,16 @@ class PosyanduController extends Controller
             return redirect('/posyandu');
         }
     
+        public function printposyandu(){
+            //ambil data dari table posyandu
+            $posyandu = DB::table('posyandu')->where('DELETED_AT',null)->get();
+    
+            // mengirim data ke view kelurahan
+            return view('printposyandu', [
+                'data' => $posyandu
+            ]);
+            
+        }
+        
 }
 ?>

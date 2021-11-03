@@ -93,6 +93,15 @@ class BalitaController extends Controller
             
         }
     
-
+        public function printbalita(){
+            //ambil data dari table kelurahan
+            $balita = DB::table('balita')->where('DELETED_AT',null)->get();
+    
+            // mengirim data ke view kelurahan
+            return view('printbalita', [
+                'data' => $balita
+            ]);
+            
+        }
 }
 ?>

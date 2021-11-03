@@ -75,7 +75,16 @@ class History_PosyanduController extends Controller
         }
     
  
-
+        public function printhistory_posyandu(){
+            //ambil data dari table history
+            $history_posyandu = DB::table('history_posyandu')->get();
+    
+            // mengirim data ke view history
+            return view('printhistory_posyandu', [
+                'data' => $history_posyandu
+            ]);
+            
+        }
 
 }
 ?>

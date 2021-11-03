@@ -88,5 +88,16 @@ class KelurahanController extends Controller
     	return redirect('/kelurahan');
     }
 
+    public function printkelurahan(){
+        //ambil data dari table kelurahan
+        $kelurahan = DB::table('kelurahan')->where('DELETED_AT',null)->get();
+
+        // mengirim data ke view kelurahan
+        return view('printkelurahan', [
+            'data' => $kelurahan
+        ]);
+        
+    }
+
 }
 ?>

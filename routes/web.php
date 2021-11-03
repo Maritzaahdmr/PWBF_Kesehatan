@@ -62,6 +62,8 @@ Route::get('/editkelurahan{ID_KELURAHAN}','App\Http\Controllers\KelurahanControl
 Route::post('/kelurahan/update','App\Http\Controllers\KelurahanController@update');
 // Route::get('/deletekelurahan{ID_KELURAHAN}','App\Http\Controllers\KelurahanController@delete');
 Route::get('/hapuskelurahan{ID_KELURAHAN}','App\Http\Controllers\KelurahanController@hapus');
+Route::get('/kelurahan/printkelurahan', [kelurahanController::class, 'printkelurahan'] );
+
 
 Route::get('/posyandu', [PosyanduController::class, 'index'] );
 
@@ -70,6 +72,8 @@ Route::post('/posyandu/store','App\Http\Controllers\PosyanduController@store');
 Route::get('/editposyandu{ID_POSYANDU}','App\Http\Controllers\PosyanduController@edit');
 Route::post('/posyandu/update','App\Http\Controllers\PosyanduController@update');
 Route::get('/hapusposyandu{ID_POSYANDU}','App\Http\Controllers\PosyanduController@hapus');
+Route::get('/kelurahan/printposyandu', [PosyanduController::class, 'printposyandu'] );
+
 
 Route::get('/balita', [BalitaController::class, 'index'] );
 
@@ -78,6 +82,7 @@ Route::post('/balita/store','App\Http\Controllers\BalitaController@store');
 Route::get('/editbalita{ID_BALITA}','App\Http\Controllers\BalitaController@edit');
 Route::post('/balita/update','App\Http\Controllers\BalitaController@update');
 Route::get('/hapusbalita{ID_BALITA}','App\Http\Controllers\BalitaController@hapus');
+Route::get('/balita/printbalita', [BalitaController::class, 'printbalita'] );
 
 Route::get('/role', [RoleController::class, 'index'] );
 Route::get('/createrole','App\Http\Controllers\RoleController@tambah');
@@ -91,5 +96,6 @@ Route::get('/createhistory_posyandu','App\Http\Controllers\History_PosyanduContr
 Route::post('/history_posyandu/store','App\Http\Controllers\History_PosyanduController@store');
 Route::get('/edithistory_posyandu{ID_HISTORY_POSYANDU}','App\Http\Controllers\History_PosyanduController@edit');
 Route::post('/history_posyandu/update','App\Http\Controllers\History_PosyanduController@update');
+Route::get('/history_posyandu/printhistory_posyandu', [History_PosyanduController::class, 'printhistory_posyandu'] );
 
 ?>
