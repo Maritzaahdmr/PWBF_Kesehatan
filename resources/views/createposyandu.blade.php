@@ -29,12 +29,12 @@
             </select>
             </div>
             <div class="form-group">
-                <label class="">Posyandu</label>
-                  <input type="text" name="Posyandu"  required="required"  ></td>
+                <label class="">Posyandu</label><br>
+                  <input type="text" name="Posyandu"  required="required"  maxlegenght="20" size="30" ></td>
              </div>
              <div class="form-group">
-                <label class="">Alamat</label>
-                  <input type="text" name="Al_Posyandu"  required="required"  ></td>
+                <label class="">Alamat</label><br>
+                  <input type="text" name="Al_Posyandu"  required="required"  maxlegenght="20" size="30" ></td>
              </div>
              {{-- <div class="form-group">
               <label class="">Created_At</label>

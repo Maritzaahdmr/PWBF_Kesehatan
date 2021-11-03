@@ -12,7 +12,7 @@ class KelurahanController extends Controller
 {
     public function index(){
         //ambil data dari table kelurahan
-        $kelurahan = DB::table('kelurahan')->where('DELETED_AT',null)->get();
+        $kelurahan = DB::table('kelurahan')->where('DELETED_AT',null)->simplePaginate(4);
 
         // mengirim data ke view kelurahan
         return view('kelurahan', [

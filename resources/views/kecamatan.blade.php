@@ -2,84 +2,96 @@
 <html>
      @extends('home')
     @section('container')
-    <div class="card me-10">
-      <div class="card-header">
-        <h3 class="card-title">Data Kecamatan</h3>
-      </div>
-      <!-- /.card-header -->
-      <div class="card-body">
-        <p><a href="createkecamatan"<button type="button" class="btn btn-primary">Tambah Data</button></a></p>
-        {{-- <table id="example1" class="table table-bordered table-striped"> --}}
-        <table id="bootstrap-data-table" class="table table-striped table-bordered">
-          <thead>
-          <tr>
-            <th>NO</th>
-            {{-- <th>ID</th> --}}
-            <th>Kecamatan</th>
-            {{-- <th>Created_At</th>
-            <th>Upadate_At</th> --}}
-            <th>Aksi</th>
-          </tr>
-          </thead>
-          @foreach($data as $kecamatan )
-          <tbody>
-          <tr>
-            <td>{{ $loop->iteration }}</td>
-            {{-- <td>{{ $kecamatan->ID_KECAMATAN }}</td> --}}
-            <td>{{ $kecamatan->KECAMATAN }}</td>
-            {{-- <td>{{ $kecamatan->CREATED_AT }}</td> --}}
-            {{-- <td>{{ $kecamatan->UPDATED_AT }}</td> --}}
-            <td>
-              <a href="/editkecamatan{{ $kecamatan->ID_KECAMATAN }}"><i class="far fa-edit"></i></a> |  <a href="hapuskecamatan{{ $kecamatan->ID_KECAMATAN }}"><i class="fas fa-trash-alt" style="color :red"></i></a>
-            </td>
-          
-          </tr>
-          @endforeach
-   
-          </tbody>
-         
-        </table>
-      </div>
-      <!-- /.card-body -->
-    </div>
-    <!-- /.card -->
+    
+<!-- DataTales Example -->
+<div class="row">
+  <div class="col-12">
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Data Kecamatan</h3>
   </div>
-  <!-- /.col -->
-</div>
-<!-- /.row -->
-</section>
-<!-- /.content -->
-</div>
- <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
-</div>
-<!-- ./wrapper -->
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
+  <div class="card-body ">
+    <p><a href="createkecamatan"<button type="button" class="btn btn-primary">Tambah Data</button></a></p>
+      <div class="card-body table-responsive">
+          <table class="table table-bordered"  >
+            <thead>
+                <tr>
+                  <th>NO</th>
+                  {{-- <th>ID</th> --}}
+                  <th>Kecamatan</th>
+                  {{-- <th>Created_At</th>
+                  <th>Upadate_At</th> --}}
+                  <th>Aksi</th>
+                </tr>
+                </thead>
+                @foreach($data as $kecamatan )
+                <tbody>
+                <tr>
+                  <td>{{ $loop->iteration }}</td>
+                  {{-- <td>{{ $kecamatan->ID_KECAMATAN }}</td> --}}
+                  <td>{{ $kecamatan->KECAMATAN }}</td>
+                  {{-- <td>{{ $kecamatan->CREATED_AT }}</td> --}}
+                  {{-- <td>{{ $kecamatan->UPDATED_AT }}</td> --}}
+                  <td>
+                    <a href="/editkecamatan{{ $kecamatan->ID_KECAMATAN }}"><i class="far fa-edit"></i></a> | <a href="hapuskecamatan{{ $kecamatan->ID_KECAMATAN }}"><i class="fas fa-trash-alt" style="color :red"></i></a>
+                  </td>
+                    {{-- <form action ="{{ url("kecamatans/".$data->id )}}" method="post" class="d-inline" onsubmit="return confirm('yakin akan dihapus?')">
+                    
+                      @method('hapus')
+                      @csrf
+                  
+                      <i class="fas fa-trash-alt" style="color :red"></i></a>
+                  </td>
+                </tr> --}}
+                @endforeach
+                </tbody>
+               
+              </table>
+            {{-- <div>
+                Showing 
+                {{ $data->firstdata() }}
+                to
+                {{ $data->lastdata() }}
+                of
+                {{ $data->total() }}
+                entries
+            </div> --}}
 
-<!-- Modal -->
-{{-- <div class="modal fade" tabindex="-1">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">KECAMATAN</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        <p>Apakah yakin akan di hapus</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
+      <div class="pull-right">
+        {{ $data->links() }}
   </div>
-</div --}}
+  </div>
+</div>
+
+</div>
+<!-- /.container-fluid -->
+
+</div>
+<!-- End of Main Content -->
+
+{{-- <!-- Footer -->
+<footer class="sticky-footer bg-white">
+<div class="container my-auto">
+<div class="copyright text-center my-auto">
+  <span>Copyright &copy; Your Website 2020</span>
+</div>
+</div>
+</footer>
+<!-- End of Footer --> --}}
+
+</div>
+<!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+<i class="fas fa-angle-up"></i>
+</a>
+
+
 <!-- jQuery -->
 <script src="../../plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
@@ -93,18 +105,27 @@
 <script src="../../dist/js/demo.js"></script>
 <!-- page script -->
 <script>
-  $(function () {
-    $("#example1").DataTable();
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-    });
-  });
+$(function () {
+$("#example1").DataTable();
+$('#example2').DataTable({
+  "paging": true,
+  "lengthChange": false,
+  "searching": false,
+  "ordering": true,
+  "info": true,
+  "autoWidth": false,
+});
+});
 </script>
 </body>
-@endsection 
+@endsection
+
+@section('scripts')
+<script>
+  $(function handleDelete(id)
+  {
+    $('hapuskecamatan').modal('show')
+  }
+</script>
+@endsection
 {{-- </html> --}}

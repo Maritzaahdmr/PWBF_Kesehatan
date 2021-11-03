@@ -41,7 +41,7 @@
                             </div>
                           </div>
   
-                          <input type="submit" name="login-button" value="Masuk" id="login-button" class="btn btn-skin btn-block btn-lg">
+                          <input type="submit" name="login-button" <a href="index" value="Masuk" id="login-button" class="btn btn-skin btn-block btn-lg">
   
                           <!-- <p class="lead-footer">* We'll contact you by phone & email later</p> -->
   

@@ -220,9 +220,7 @@
             </ul>
             </li>
           </li>
-
-    
-                  <li class="nav-item has-treeview menu-open">
+              <li class="nav-item has-treeview menu-open">
                     <a class="nav-link" href='#'>
                       <i class="fas fa-file-alt"></i>
                     <p>
@@ -299,10 +297,12 @@
           <div class="col-sm-12">
             {{-- <h1 class="m-0 text-dark">Dashboard</h1> --}}
             </div><!-- /.col -->
-            @yield('container')
+      
           </div><!-- /.col -->
         </div><!-- /.row -->
+        @yield('container')
       </div><!-- /.container-fluid -->
+    
     </div>
     <!-- /.content-header -->
 
@@ -359,5 +359,6 @@
 <script src="{{ asset('frontend\AdminLTE-master')}}/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('frontend\AdminLTE-master')}}/dist/js/demo.js"></script>
+@yield('scripts')
 </body>
 </html>
