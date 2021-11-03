@@ -29,16 +29,16 @@
             </select>
             </div>
             <div class="form-group">
-                <label class="">TGL Posyandu</label>
-                  <input type="datetime-local" name="tgl_pos"  required="required"  ></td>
+                <label class="">TGL Posyandu</label><br>
+                  <input type="datetime-local" name="tgl_pos"  required="required" maxlegenght="20" size="30" ></td>
              </div>
            <div class="form-group">
-            <label class="">Berat Badan Balita</label>
-              <input type="number" name="bb_bal"  required="required"  ></td>
+            <label class="">Berat Badan Balita</label><br>
+              <input type="number" name="bb_bal"  required="required" maxlegenght="20" size="30" ></td>
             </div>
               <div class="form-group">
-                <label class="">Tinggi Badan Balita</label>
-                  <input type="text" name="tb_bal" required="required"  ></td>
+                <label class="">Tinggi Badan Balita</label><br>
+                  <input type="text" name="tb_bal" required="required" maxlegenght="20" size="30" ></td>
             </div>
              {{-- <div class="form-group">
               <label class="">Created_At</label>

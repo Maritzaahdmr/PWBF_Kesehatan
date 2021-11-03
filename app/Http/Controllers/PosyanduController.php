@@ -14,7 +14,7 @@ class PosyanduController extends Controller
 {
     public function index(){
         //ambil data dari table posyandu
-        $posyandu = DB::table('posyandu')->where('DELETED_AT',null)->get();
+        $posyandu = DB::table('posyandu')->where('DELETED_AT',null)->simplePaginate(4);
 
         // mengirim data ke view kelurahan
         return view('posyandu', [

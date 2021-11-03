@@ -36,6 +36,7 @@ Route::get('/login', function () {
 Route::get('/agenda', function () {
     return view('agenda');
 });
+
 Route::get('/', function () {
     return view('grafik');
 });

@@ -12,7 +12,7 @@ class BalitaController extends Controller
 {
     public function index(){
         //ambil data dari table kelurahan
-        $balita = DB::table('balita')->where('DELETED_AT',null)->get();
+        $balita = DB::table('balita')->where('DELETED_AT',null)->simplePaginate(4);
 
         // mengirim data ke view kelurahan
         return view('balita', [

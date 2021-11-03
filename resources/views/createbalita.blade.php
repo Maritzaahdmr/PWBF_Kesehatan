@@ -30,27 +30,27 @@
             </div>
             <div class="form-group">
                 <label class="">Nama Balita</label>
-                  <input type="text" name="balita"  required="required"  ></td>
+                  <input type="text" name="balita"  required="required" maxlegenght="20" size="30" ></td>
              </div>
            <div class="form-group">
-            <label class="">NIK</label>
-              <input type="number" name="NIK"  required="required"  ></td>
+            <label class="">NIK</label><br>
+              <input type="number" name="NIK"  required="required"  maxlegenght="20" size="30" ></td>
             </div>
               <div class="form-group">
                 <label class="">NAMA ORANG TUA</label>
-                  <input type="text" name="nama" required="required"  ></td>
+                  <input type="text" name="nama" required="required"  maxlegenght="20" size="30" ></td>
             </div>
             <div class="form-group">
-              <label class="">TGL LAHIR BALITA</label>
-                <input type="datetime-local" name="tgl"  required="required"  ></td>
+              <label class="">TGL LAHIR BALITA</label><br>
+                <input type="datetime-local" name="tgl"  required="required"  maxlegenght="20" size="30" ></td>
             </div>
             <div class="form-group">
               <label class="">JENIS KELAMIN</label>
-                <input type="text" name="jk"  required="required"  ></td>
+                <input type="text" name="jk"  required="required"  maxlegenght="20" size="30" ></td>
           </div>
           <div class="form-group">
-            <label class="">STATUS</label>
-              <input type="text" name="status"  required="required"  ></td>
+            <label class="">STATUS</label><br>
+              <input type="text" name="status"  required="required"  maxlegenght="20" size="30" ></td>
         </div>
              {{-- <div class="form-group">
               <label class="">Created_At</label>

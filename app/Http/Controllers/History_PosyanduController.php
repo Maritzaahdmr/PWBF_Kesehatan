@@ -12,7 +12,7 @@ class History_PosyanduController extends Controller
 {
     public function index(){
         //ambil data dari table history
-        $history_posyandu = DB::table('history_posyandu')->get();
+        $history_posyandu = DB::table('history_posyandu')->simplePaginate(4);
 
         // mengirim data ke view history
         return view('history_posyandu', [

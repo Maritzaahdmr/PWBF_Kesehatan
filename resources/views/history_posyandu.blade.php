@@ -44,6 +44,10 @@
           </tbody>
          
         </table>
+        <br>
+        <div class="pull-right">
+          {{ $data->links() }}
+    </div>
       </div>
       <!-- /.card-body -->
     </div>
