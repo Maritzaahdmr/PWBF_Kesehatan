@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Balita;
 use App\Models\Posyandu;
+use App\Models\trashbalita;
 use App\createbalita;
 
 class BalitaController extends Controller
@@ -100,8 +101,30 @@ class BalitaController extends Controller
             // mengirim data ke view kelurahan
             return view('printbalita', [
                 'data' => $balita
-            ]);
-            
+            ]);            
+        }
+
+        public function trash()
+        {
+    	// mengampil data guru yang sudah dihapus
+    	$balitas = balita::onlyTrashed()->get();
+    	return view('trashbalita', ['balita' => $balitas]);
+        }
+
+    
+        public function restore($id = null){
+                if($id != null){
+                    $balitas = balita::onlyTrashed()
+                        ->where('ID_BALITA', $id)
+                        ->restore();
+                }else{
+                    $balitas = balita::onlyTrashed()->restore();
+                }
+                return redirect('trashbalita');
+                // $kecamatans = kecamatan::onlyTrashed()->where('id',$id);
+                // $kecamatans->restore();
+                
+                // return redirect('trashkecamatan');
         }
 }
 ?>

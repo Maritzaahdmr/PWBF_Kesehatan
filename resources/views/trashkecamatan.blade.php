@@ -8,11 +8,15 @@
   <div class="col-12">
 <div class="card">
   <div class="card-header">
-    <h3 class="card-title">Data Kecamatan</h3>
+    <h3 class="card-title">Data Kecamatan Terhapus</h3>
   </div>
   <div class="card-body ">
-    <p><a href="createkecamatan"<button type="button" class="btn btn-primary">Tambah Data</button></a> | 
-      <a href="trashkecamatan"<button type="button" class="btn btn-warning">Sampah</button></a>
+    <p><a href="kecamatan"<button type="button" class="btn btn-secondary btn-sm"> 
+        <i class="fas fa-angle-left"></i> Back</button>
+        </a> | 
+        <a href="/restorekecamatan"<button type="button" class="btn btn-warning btn-sm">
+            <i class= "fa fa-undo"></i> Restore All</button>
+        </a> 
     </p>
     {{-- <div class="card-body table-responsive">
           <table class="table table-bordered"  > --}}
@@ -27,30 +31,35 @@
                   <th>Aksi</th>
                 </tr>
                 </thead>
-                @foreach($data as $kecamatan )
-                <tbody>
-                <tr>
-                  {{-- <td>{{ $loop->iteration }}</td> --}}
-                  <td>{{ $kecamatan->ID_KECAMATAN }}</td>
-                  <td>{{ $kecamatan->KECAMATAN }}</td>
-                  {{-- <td>{{ $kecamatan->CREATED_AT }}</td> --}}
-                  {{-- <td>{{ $kecamatan->UPDATED_AT }}</td> --}}
-                  <td>
-                    <a href="/editkecamatan{{ $kecamatan->ID_KECAMATAN }}"><i class="far fa-edit"></i></a> | <a href="hapuskecamatan{{ $kecamatan->ID_KECAMATAN }}"><i class="fas fa-trash-alt" style="color :red"></i></a>
-                  </td>
-                    {{-- <form action ="{{ url("kecamatans/".$data->id )}}" method="post" class="d-inline" onsubmit="return confirm('yakin akan dihapus?')">
-                    
-                      @method('hapus')
-                      @csrf
-                  
-                      <i class="fas fa-trash-alt" style="color :red"></i></a>
-                  </td>
-                </tr> --}}
-                @endforeach
-                </tbody>
+                @if ($kecamatan->count() > 0)
+                  @foreach($kecamatan as $data )
+                    <tbody>
+                      <tr>
+                        {{-- <td>{{ $loop->iteration }}</td> --}}
+                        <td>{{ $data->ID_KECAMATAN }}</td>
+                        <td>{{ $data->KECAMATAN }}</td>
+                        {{-- <td>{{ $kecamatan->CREATED_AT }}</td> --}}
+                        {{-- <td>{{ $kecamatan->UPDATED_AT }}</td> --}}
+                        <td>
+                          <a href="/restorekecamatan{{ $data->ID_KECAMATAN }}" class="btn btn-info btn-sm"> Restore</a>    
+                          {{-- <a href="deletekecamatan{{ $data->ID_KECAMATAN }}"><i class="fas fa-trash-alt" style="color :red"></i></a> --}}
+                        </td>
+                          {{-- <form action ="{{ url("kecamatans/".$data->id )}}" method="post" class="d-inline" onsubmit="return confirm('yakin akan dihapus?')">
+                          
+                            @method('hapus')
+                            @csrf
+                        
+                            <i class="fas fa-trash-alt" style="color :red"></i></a>
+                        </td>
+                      </tr> --}}
+                  @endforeach                    
+                @else
+                      <tr>
+                          <td colspan='4' class='text-center'>Data Kosong</td>
+                @endif
+                    </tbody>
                
               </table>
-              <br>
             {{-- <div>
                 Showing 
                 {{ $data->firstdata() }}
@@ -61,10 +70,10 @@
                 entries
             </div> --}}
 
-      {{-- </div> --}}
-      <div class="pull-right">
-        {{ $data->links() }}
-  </div>
+      </div>
+      {{-- <div class="pull-right">
+        {{ $kecamatan->links() }}
+  </div> --}}
   </div>
 </div>
 

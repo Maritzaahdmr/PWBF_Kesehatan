@@ -8,7 +8,9 @@
       </div>
       <!-- /.card-header -->
       <div class="card-body">
-          <p><a href="createrole"<button type="button" class="btn btn-primary">Tambah Data</button></a></p>
+          <p><a href="createrole"<button type="button" class="btn btn-primary">Tambah Data</button></a> | 
+            <a href="trashrole"<button type="button" class="btn btn-warning">Sampah</button></a>
+          </p>
         <table id="example1" class="table table-bordered table-striped">
           <thead>
           <tr>

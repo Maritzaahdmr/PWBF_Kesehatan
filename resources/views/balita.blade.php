@@ -9,7 +9,8 @@
       <!-- /.card-header -->
       <div class="card-body">
         <p><a href="createbalita"<button type="button" class="btn btn-primary">Tambah Data</button></a> | 
-          <a href="/balita/printbalita" target="_blank" class="btn btn-danger">Print PDF</a>
+          <a href="/balita/printbalita" target="_blank" class="btn btn-danger">Print PDF</a> | 
+          <a href="trashbalita"<button type="button" class="btn btn-warning">Sampah</button></a>
         </p>
         <table id="example1" class="table table-bordered table-striped">
           <thead>

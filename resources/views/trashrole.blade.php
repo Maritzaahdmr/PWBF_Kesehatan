@@ -4,46 +4,51 @@
     @section('container')
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title">Data Kelurahan</h3>
+        <h3 class="card-title">Data Role </h3>
       </div>
       <!-- /.card-header -->
       <div class="card-body">
-          <p><a href="createkelurahan"<button type="button" class="btn btn-primary">Tambah Data</button></a> |
-            <a href="/kelurahan/printkelurahan" target="_blank" class="btn btn-danger">Print PDF</a> | 
-            <a href="trashkelurahan"<button type="button" class="btn btn-warning">Sampah</button></a>
-          </p>
+        <p><a href="role"<button type="button" class="btn btn-secondary btn-sm"> 
+            <i class="fas fa-angle-left"></i> Back</button>
+            </a> | 
+            <a href="/restorerole"<button type="button" class="btn btn-warning btn-sm">
+                <i class= "fa fa-undo"></i> Restore All</button>
+            </a> 
+        </p>
         <table id="example1" class="table table-bordered table-striped">
           <thead>
           <tr>
-            <th>ID KELURAHAN</th>
-            <th>ID KECAMATAN</th>
-            <th>KELURAHAN</th>
+            <th>ID ROLE</th>
+            <th>NAMA ROLE</th>
             {{-- <th>CREATED AT</th>
             <th>UPDATED AT</th> --}}
             <th>Aksi</th>
           </tr>
           </thead>
-          @foreach($data as $kelurahan )
+          @if ($role->count() > 0)
+          @foreach($role as $data )
           <tbody>
           <tr>
-            <td>{{ $kelurahan->ID_KELURAHAN }}</td>
-            <td>{{ $kelurahan->ID_KECAMATAN }}</td>
-            <td>{{ $kelurahan->KELURAHAN }}</td>
+            <td>{{ $data->ID_ROLE }}</td>
+            <td>{{ $data->ROLE }}</td>
             {{-- <td>{{ $kelurahan->CREATED_AT }}</td>
             <td>{{ $kelurahan->UPDATED_AT }}</td> --}}
             <td>
-              <a href="/editkelurahan{{ $kelurahan->ID_KELURAHAN }}"><i class="far fa-edit"></i></a> |  <a href="hapuskelurahan{{ $kelurahan->ID_KELURAHAN }}"><i class="fas fa-trash-alt" style="color :red"></i></a>
+              <a href="/restorerole{{ $data->ID_ROLE }}"class="btn btn-info btn-sm"> Restore</a>
             </td>
           </tr>
           @endforeach
+          @else
+          <tr>
+            <td colspan='4' class='text-center'>Data Kosong</td>
+          @endif
           </tbody>
         </table>
         <br>
-        <div class="pull-right">
+        {{-- <div class="pull-right">
           {{ $data->links() }}
-    </div>
+    </div> --}}
       </div>
-          
       <!-- /.card-body -->
     </div>
     <!-- /.card -->

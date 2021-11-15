@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\role;
+use App\Models\trasgrole;
 use App\createrole;
 
 class RoleController extends Controller
@@ -73,5 +74,25 @@ public function store(Request $request){
          
                 return redirect('/role');
             }
+
+            public function trash()
+        {
+    	// mengampil data guru yang sudah dihapus
+    	$roles = role::onlyTrashed()->get();
+    	return view('trashrole', ['role' => $roles]);
+        }
+
+    
+        public function restore($id = null){
+            if($id != null){
+                $kecamatans = role::onlyTrashed()
+                    ->where('ID_ROLE', $id)
+                    ->restore();
+            }else{
+                $roles = role::onlyTrashed()->restore();
+            }
+            return redirect('trashrole');
+            
+        }
     
 }

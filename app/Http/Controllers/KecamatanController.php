@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\kecamatan;
+use App\Models\trashkecamatan;
 use App\createkecamatan;
+
 
 class KecamatanController extends Controller
 {
@@ -95,8 +97,29 @@ class KecamatanController extends Controller
         // // alihkan halaman ke halaman kecamatan
         // return redirect('/kecamatan');
      
+        // menampilkan data guru yang sudah dihapus
+        public function trash()
+        {
+    	// mengampil data guru yang sudah dihapus
+    	$kecamatans = kecamatan::onlyTrashed()->get();
+    	return view('trashkecamatan', ['kecamatan' => $kecamatans]);
+        }
+
     
-    
+        public function restore($id = null){
+                if($id != null){
+                    $kecamatans = kecamatan::onlyTrashed()
+                        ->where('ID_KECAMATAN', $id)
+                        ->restore();
+                }else{
+                    $kecamatans = kecamatan::onlyTrashed()->restore();
+                }
+                return redirect('trashkecamatan');
+                // $kecamatans = kecamatan::onlyTrashed()->where('id',$id);
+                // $kecamatans->restore();
+                
+                // return redirect('trashkecamatan');
+        }
 
 }
 ?>

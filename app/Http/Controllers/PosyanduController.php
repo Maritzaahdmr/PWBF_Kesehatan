@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Posyandu;
 use App\Models\Kelurahan;
+use App\Models\trashposyandu;
 use App\createposyandu;
 
 
@@ -92,8 +93,26 @@ class PosyanduController extends Controller
             // mengirim data ke view kelurahan
             return view('printposyandu', [
                 'data' => $posyandu
-            ]);
-            
+            ]);            
+        }
+
+        public function trash()
+        {
+    	// mengampil data guru yang sudah dihapus
+    	$posyandus = posyandu::onlyTrashed()->get();
+    	return view('trashposyandu', ['posyandu' => $posyandus]);
+        }
+
+    
+        public function restore($id = null){
+        if($id != null){
+            $posyandus = posyandu::onlyTrashed()
+                ->where('ID_POSYANDU', $id)
+                ->restore();
+        }else{
+            $posyandus = posyandu::onlyTrashed()->restore();
+        }
+        return redirect('trashposyandu');
         }
         
 }

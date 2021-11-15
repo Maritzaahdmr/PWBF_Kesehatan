@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\History_Posyandu;
 use App\Models\Balita;
+use App\Models\trashhistory_posyandu;
 use App\createhistory_posyandu;
 
 class History_PosyanduController extends Controller
@@ -84,6 +85,29 @@ class History_PosyanduController extends Controller
                 'data' => $history_posyandu
             ]);
             
+        }
+
+        public function trash()
+        {
+    	// mengampil data guru yang sudah dihapus
+    	$history_posyandus = history_posyandu::onlyTrashed()->get();
+    	return view('trashhistory_posyandu', ['history_posyandu' => $history_posyandus]);
+        }
+
+    
+        public function restore($id = null){
+        if($id != null){
+            $history_posyandus = history_posyandu::onlyTrashed()
+                ->where('ID_HISTORY_POSYANDU', $id)
+                ->restore();
+        }else{
+            $history_posyandus = history_posyandu::onlyTrashed()->restore();
+        }
+        return redirect('trashhistory_posyandu');
+        // $kecamatans = kecamatan::onlyTrashed()->where('id',$id);
+        // $kecamatans->restore();
+        
+        // return redirect('trashkecamatan');
         }
 
 }

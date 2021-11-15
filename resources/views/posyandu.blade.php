@@ -9,7 +9,8 @@
       <!-- /.card-header -->
           <div class="card-body">
             <p><a href="createposyandu"<button type="button" class="btn btn-primary">Tambah Data</button></a> | 
-              <a href="/kelurahan/printposyandu" target="_blank" class="btn btn-danger">Print PDF</a>
+              <a href="/kelurahan/printposyandu" target="_blank" class="btn btn-danger">Print PDF</a> | 
+              <a href="trashposyandu"<button type="button" class="btn btn-warning">Sampah</button></a>  
             </p>
           <table id="example1" class="table table-bordered table-striped">
           <thead>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\kelurahan;
 use App\Models\kecamatan;
+use App\Models\trashkecamatan;
 use App\createkelurahan;
 
 class KelurahanController extends Controller
@@ -95,8 +96,26 @@ class KelurahanController extends Controller
         // mengirim data ke view kelurahan
         return view('printkelurahan', [
             'data' => $kelurahan
-        ]);
-        
+        ]);        
+    }
+
+    public function trash()
+    {
+    // mengampil data guru yang sudah dihapus
+    $kelurahans = kelurahan::onlyTrashed()->get();
+    return view('trashkelurahan', ['kelurahan' => $kelurahans]);
+    }
+
+
+    public function restore($id = null){
+            if($id != null){
+                $kelurahans = kelurahan::onlyTrashed()
+                    ->where('ID_KELURAHAN', $id)
+                    ->restore();
+            }else{
+                $kelurahans = kelurahan::onlyTrashed()->restore();
+            }
+            return redirect('trashkelurahan');
     }
 
 }
