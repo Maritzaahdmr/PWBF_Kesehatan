@@ -12,7 +12,7 @@ class KecamatanController extends Controller
     public function index(){
         //ambil data dari table kecamatan
         // $kecamatan = Kecamatan::with('Kecamatan')->paginate(5);
-        $kecamatan = DB::table('kecamatan')->where('DELETED_AT',null)->simplePaginate(5);
+        $kecamatan = DB::table('kecamatan')->where('DELETED_AT',null)->Paginate(5);
 
         // mengirim data ke view kecamatan
         return view('kecamatan', [
@@ -20,6 +20,21 @@ class KecamatanController extends Controller
         ]);
         
     }
+
+    public function cari(Request $request)
+	{
+		// menangkap data pencarian
+		$cari = $request->cari;
+ 
+    		// mengambil data dari table kelurahan sesuai pencarian data
+		$kecamatan = DB::table('kecamatan')
+		->where('KECAMATAN','like',"%".$cari."%")
+		->paginate();
+ 
+    		// mengirim data kelurahan ke view index
+		return view('kecamatan',['data' => $kecamatan]);
+ 
+	}
 
     public function tambah(){
         return view('createkecamatan');
@@ -62,7 +77,7 @@ class KecamatanController extends Controller
     ]);
 
     // alihkan halaman ke halaman siswa
-    return redirect('/kecamatan');
+    return redirect('/kecamatan')->with('status','Data Kecamatan berhasil di update!');
     }
 
     // public function delete($id){

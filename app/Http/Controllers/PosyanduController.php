@@ -14,7 +14,7 @@ class PosyanduController extends Controller
 {
     public function index(){
         //ambil data dari table posyandu
-        $posyandu = DB::table('posyandu')->where('DELETED_AT',null)->simplePaginate(4);
+        $posyandu = DB::table('posyandu')->where('DELETED_AT',null)->Paginate(4);
 
         // mengirim data ke view kelurahan
         return view('posyandu', [
@@ -22,6 +22,21 @@ class PosyanduController extends Controller
         ]);
         
     }
+
+    public function cari(Request $request)
+	{
+		// menangkap data pencarian
+		$cari = $request->cari;
+ 
+    		// mengambil data dari table kelurahan sesuai pencarian data
+		$posyandu = DB::table('posyandu')
+		->where('NAMA_POSYANDU','like',"%".$cari."%")
+		->paginate();
+ 
+    		// mengirim data kelurahan ke view index
+		return view('posyandu',['data' => $posyandu]);
+ 
+	}
 
     public function tambah(){
         $kelurahans = kelurahan::all();
@@ -73,7 +88,7 @@ class PosyanduController extends Controller
         ]);
     
         // alihkan halaman ke halaman siswa
-        return redirect('/posyandu');
+        return redirect('/posyandu')->with('status','Data Posyandu berhasil di update!');
         }
 
         public function hapus($id){

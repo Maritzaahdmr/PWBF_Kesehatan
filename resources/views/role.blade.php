@@ -27,8 +27,16 @@
             {{-- <td>{{ $kelurahan->CREATED_AT }}</td>
             <td>{{ $kelurahan->UPDATED_AT }}</td> --}}
             <td>
-              <a href="/editrole{{ $role->ID_ROLE }}"><i class="far fa-edit"></i></a> |  <a href="/hapusrole{{ $role->ID_ROLE }}"><i class="fas fa-trash-alt" style="color :red"></i></a>
-            </td>
+              <a href="/editrole{{ $role->ID_ROLE }}"><i class="far fa-edit"></i></a> | 
+               {{-- <a href="/hapusrole{{ $role->ID_ROLE }}"><i class="fas fa-trash-alt" style="color :red"></i></a> --}}
+               <form action="{{ url('hapus'.$role->ID_ROLE) }}" method="GET" class="d-inline" onsubmit="return confirm('Hapus Data ?')">
+                @method('hapus')
+                @csrf
+                <button class="btn btn-danger btn-sm">
+                  <i class="fas fa-trash-alt"></i></button>
+                    {{-- <i class="fa fa-trash"></i></button> --}}
+            </form>
+              </td>
           </tr>
           @endforeach
           </tbody>

@@ -50,10 +50,14 @@
                 <input type="text" name="jk"  class="form-control" value="{{ $data->JENIS_KELAMIN_BALITA }}" required="required"  axlegenght="30" size="50"      ></td>
                 <input type="hidden" name="id" class="form-control" value="{{ $data->ID_BALITA }}" value=""/>  
             </div>
-          <div class="form-group">
-            <label class="">STATUS</label>
-              <input type="text" name="status"  class="form-control" value="{{ $data->STATUS }}" required="required"  axlegenght="30" size="50"      ></td>
-              <input type="hidden" name="id" class="form-control" value="{{ $data->ID_BALITA }}" value=""/>  
+          <div class="form-check">
+            <label class="">STATUS</label><br>
+              <td><input type="radio" name="status" value="{{ $data->STATUS }}" checked="checked" required="required">Sehat</td>
+              <td><input type="radio" name="status" value="{{ $data->STATUS }}" checked="checked">Sunting</td>
+              <td><input type="radio" name="status" value="{{ $data->STATUS }}" checked="checked">DBD</td>
+              <td><input type="radio" name="status" value="{{ $data->STATUS }}" checked="checked">Campak</td>
+              {{-- {{-- <input type="radio" name="status"  class="form-control" value="{{ $data->STATUS }}" required="required"  axlegenght="30" size="50"      ></td> --}}
+              <input type="hidden" name="id" class="form-control" value="{{ $data->ID_BALITA }}" value=""/>
         </div>
              {{-- <div class="form-group">
               <label class="">Created_At</label>

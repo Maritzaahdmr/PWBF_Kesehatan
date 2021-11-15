@@ -18,8 +18,8 @@
       <div class="card-body">
         <div class="row">
             <div class="col-md-4 offset-md-4">
-        <form action="/kelurahan/update" method="post">
-          @csrf
+        {{-- <form action="/kelurahan/update" method="post">
+          @csrf --}}
             {{-- <div class="form-group">
             <label class="">id_kecamatan</label>
             <select name="id_kec" class="form-control">
@@ -30,6 +30,9 @@
             </select>
             </div> --}}
             <div class="form-group">
+              <form action="{{ url('kelurahan/update'.$data->ID_KELURAHAN) }}" method="post">
+                @method('patch')
+                @csrf
                 <label class="">ID Kecamatan</label>
                 <input type="number" name="id_kec" class="form-control" value="{{ $data->KELURAHAN }}" required="required"  ></td>
                 <input type="hidden" name="id" class="form-control" value="{{ $data->ID_KELURAHAN }}" value=""/>             </div>
@@ -46,8 +49,6 @@
                   <input type="datetime-local" name="Updated_At" required="required"></td>
              </div>
              --}}
-          
-            
                 <button type="submit" class="btn btn-primary">Submit</button> 
         </form>
       <!-- /.card-body -->

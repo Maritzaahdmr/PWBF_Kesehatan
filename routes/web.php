@@ -54,16 +54,17 @@ Route::get('/editkecamatan{ID_KECAMATAN}','App\Http\Controllers\KecamatanControl
 Route::post('/kecamatan/update','App\Http\Controllers\KecamatanController@update');
 // Route::get('/deletekecamatan{ID_KECAMATAN}','App\Http\Controllers\KecamatanController@delete');
 Route::get('/hapuskecamatan{ID_KECAMATAN}','App\Http\Controllers\KecamatanController@hapus');
-
+Route::get('/kecamatan/cari','App\Http\Controllers\KecamatanController@cari');
 Route::get('/kelurahan', [kelurahanController::class, 'index'] );
 
 Route::get('/createkelurahan','App\Http\Controllers\KelurahanController@tambah');
 Route::post('/kelurahan/store','App\Http\Controllers\KelurahanController@store');
 Route::get('/editkelurahan{ID_KELURAHAN}','App\Http\Controllers\KelurahanController@edit');
-Route::post('/kelurahan/update','App\Http\Controllers\KelurahanController@update');
+Route::patch('/kelurahan/update{ID_KELURAHAN}','App\Http\Controllers\KelurahanController@update');
 // Route::get('/deletekelurahan{ID_KELURAHAN}','App\Http\Controllers\KelurahanController@delete');
-Route::get('/hapuskelurahan{ID_KELURAHAN}','App\Http\Controllers\KelurahanController@hapus');
+Route::get('/hapus{ID_KELURAHAN}','App\Http\Controllers\KelurahanController@hapus');
 Route::get('/kelurahan/printkelurahan', [kelurahanController::class, 'printkelurahan'] );
+Route::get('/kelurahan/cari','App\Http\Controllers\KelurahanController@cari');
 
 
 Route::get('/posyandu', [PosyanduController::class, 'index'] );
@@ -73,8 +74,8 @@ Route::post('/posyandu/store','App\Http\Controllers\PosyanduController@store');
 Route::get('/editposyandu{ID_POSYANDU}','App\Http\Controllers\PosyanduController@edit');
 Route::post('/posyandu/update','App\Http\Controllers\PosyanduController@update');
 Route::get('/hapusposyandu{ID_POSYANDU}','App\Http\Controllers\PosyanduController@hapus');
-Route::get('/kelurahan/printposyandu', [PosyanduController::class, 'printposyandu'] );
-
+Route::get('/posyandu/printposyandu', [PosyanduController::class, 'printposyandu'] );
+Route::get('/posyandu/cari','App\Http\Controllers\PosyanduController@cari');
 
 Route::get('/balita', [BalitaController::class, 'index'] );
 
@@ -83,6 +84,7 @@ Route::post('/balita/store','App\Http\Controllers\BalitaController@store');
 Route::get('/editbalita{ID_BALITA}','App\Http\Controllers\BalitaController@edit');
 Route::post('/balita/update','App\Http\Controllers\BalitaController@update');
 Route::get('/hapusbalita{ID_BALITA}','App\Http\Controllers\BalitaController@hapus');
+Route::get('/balita/cari','App\Http\Controllers\BalitaController@cari');
 Route::get('/balita/printbalita', [BalitaController::class, 'printbalita'] );
 
 Route::get('/role', [RoleController::class, 'index'] );

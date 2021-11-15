@@ -48,9 +48,13 @@
               <label class="">JENIS KELAMIN</label>
                 <input type="text" name="jk"  required="required"  maxlegenght="20" size="30" ></td>
           </div>
-          <div class="form-group">
+          <div class="form-check">
             <label class="">STATUS</label><br>
-              <input type="text" name="status"  required="required"  maxlegenght="20" size="30" ></td>
+              {{-- <input type="radio" name="status"  required="required"  maxlegenght="20" size="30" ></td> --}}
+              <td><input type="radio" name="status"  required="required" checked="checked">Sehat</td>
+              <td><input type="radio" name="status"  required="required" checked="checked">Sunting</td>
+              <td><input type="radio" name="status"  required="required" checked="checked">DBD</td>
+              <td><input type="radio" name="status"  required="required" checked="checked">Campak</td>
         </div>
              {{-- <div class="form-group">
               <label class="">Created_At</label>
