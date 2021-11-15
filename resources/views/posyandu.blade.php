@@ -20,10 +20,22 @@
               </div>
           </form>
           <br>
+                 </div>
+               </form>
+               <br>
             <p><a href="createposyandu"<button type="button" class="btn btn-primary">Tambah Data</button></a> | 
               <a href="/kelurahan/printposyandu" target="_blank" class="btn btn-danger">Print PDF</a> | 
               <a href="trashposyandu"<button type="button" class="btn btn-warning">Sampah</button></a>  
+              <a href="/posyandu/printposyandu" target="_blank" class="btn btn-danger">Print PDF</a>
             </p>
+            <div class="card-body table-responsive">
+              <div class="animated fadeIn">
+                @if (session('status'))
+                <div class="alert alert-success">
+                  {{ session('status') }}
+                </div>
+                @endif
+              </div>
           <table id="example1" class="table table-bordered table-striped">
           <thead>
           <tr>
@@ -46,8 +58,16 @@
             {{-- <td>{{ $posyandu->CREATED_AT }}</td>
             <td>{{ $posyandu->UPDATED_AT }}</td> --}}
             <td>
-              <a href="/editposyandu{{ $posyandu->ID_POSYANDU }}"><i class="far fa-edit"></i></a> |  <a href="/hapusposyandu{{ $posyandu->ID_POSYANDU }}"><i class="fas fa-trash-alt" style="color :red"></i></a>
-            </td>
+              <a href="/editposyandu{{ $posyandu->ID_POSYANDU }}"><i class="far fa-edit"></i></a> | 
+               {{-- <a href="/hapusposyandu{{ $posyandu->ID_POSYANDU }}"><i class="fas fa-trash-alt" style="color :red"></i></a> --}}
+               <form action="{{ url('hapus'.$posyandu->ID_POSYANDU) }}" method="GET" class="d-inline" onsubmit="return confirm('Hapus Data ?')">
+                @method('hapus')
+                @csrf
+                <button class="btn btn-danger btn-sm">
+                  <i class="fas fa-trash-alt"></i></button>
+                    {{-- <i class="fa fa-trash"></i></button> --}}
+            </form>
+              </td>
           </tr>
           @endforeach
           </tbody>

@@ -10,6 +10,7 @@
   <div class="card-header">
     <h3 class="card-title">Data Kecamatan</h3>
   </div>
+  
   <div class="card-body ">
     <form action="/kecamatan/cari" method="get">
       <div class="input-group input-group-sm">
@@ -29,6 +30,28 @@
     {{-- <div class="card-body table-responsive">
           <table class="table table-bordered"  > --}}
             <table id="example1" class="table table-bordered table-striped">
+      <form action="/kecamatan/cari" method="get">
+       <div class="input-group input-group-sm">
+           <input type="text" class="form-control form-control-navbar" name="cari" value="{{ request('cari') }}"
+           placeholder="Ketikan sesuatu" aria-label="Search" >
+           <div class="input-group-append">
+           <button class="btn btn-navbar" type="submit">
+             <i class="fas fa-search"></i>
+           </button>
+           </div>
+          </div>
+        </form>
+        <br>
+    <p><a href="createkecamatan"<button type="button" class="btn btn-primary">Tambah Data</button></a></p>
+      <div class="card-body table-responsive">
+        <div class="animated fadeIn">
+          @if (session('status'))
+          <div class="alert alert-success">
+            {{ session('status') }}
+          </div>
+          @endif
+        </div>
+          <table class="table table-bordered"  >
             <thead>
                 <tr>
                   <th>NO</th>
@@ -48,8 +71,16 @@
                   {{-- <td>{{ $kecamatan->CREATED_AT }}</td> --}}
                   {{-- <td>{{ $kecamatan->UPDATED_AT }}</td> --}}
                   <td>
-                    <a href="/editkecamatan{{ $kecamatan->ID_KECAMATAN }}"><i class="far fa-edit"></i></a> | <a href="hapuskecamatan{{ $kecamatan->ID_KECAMATAN }}"><i class="fas fa-trash-alt" style="color :red"></i></a>
-                  </td>
+                    <a href="/editkecamatan{{ $kecamatan->ID_KECAMATAN }}"><i class="far fa-edit"></i></a> |
+                     {{-- <a href="hapuskecamatan{{ $kecamatan->ID_KECAMATAN }}"><i class="fas fa-trash-alt" style="color :red"></i></a> --}}
+                     <form action="{{ url('hapus'.$kecamatan->ID_KECAMATAN) }}" method="GET" class="d-inline" onsubmit="return confirm('Hapus Data ?')">
+                      @method('hapus')
+                      @csrf
+                      <button class="btn btn-danger btn-sm">
+                        <i class="fas fa-trash-alt"></i></button>
+                          {{-- <i class="fa fa-trash"></i></button> --}}
+                  </form>
+                    </td>
                     {{-- <form action ="{{ url("kecamatans/".$data->id )}}" method="post" class="d-inline" onsubmit="return confirm('yakin akan dihapus?')">
                     
                       @method('hapus')
@@ -65,11 +96,11 @@
               <br>
             {{-- <div>
                 Showing 
-                {{ $data->firstdata() }}
+                {{ $kecamatan->firstdata() }}
                 to
-                {{ $data->lastdata() }}
+                {{ $kecamatan->lastdata() }}
                 of
-                {{ $data->total() }}
+                {{ $kecamatan->total() }}
                 entries
             </div> --}}
 
