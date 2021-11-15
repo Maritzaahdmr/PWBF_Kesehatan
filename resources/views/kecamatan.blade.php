@@ -27,23 +27,6 @@
     <p><a href="createkecamatan"<button type="button" class="btn btn-primary">Tambah Data</button></a> | 
       <a href="trashkecamatan"<button type="button" class="btn btn-warning">Sampah</button></a>
     </p>
-    {{-- <div class="card-body table-responsive">
-          <table class="table table-bordered"  > --}}
-            <table id="example1" class="table table-bordered table-striped">
-      <form action="/kecamatan/cari" method="get">
-       <div class="input-group input-group-sm">
-           <input type="text" class="form-control form-control-navbar" name="cari" value="{{ request('cari') }}"
-           placeholder="Ketikan sesuatu" aria-label="Search" >
-           <div class="input-group-append">
-           <button class="btn btn-navbar" type="submit">
-             <i class="fas fa-search"></i>
-           </button>
-           </div>
-          </div>
-        </form>
-        <br>
-    <p><a href="createkecamatan"<button type="button" class="btn btn-primary">Tambah Data</button></a></p>
-      <div class="card-body table-responsive">
         <div class="animated fadeIn">
           @if (session('status'))
           <div class="alert alert-success">
@@ -51,7 +34,7 @@
           </div>
           @endif
         </div>
-          <table class="table table-bordered"  >
+          <table id="example1" class="table table-bordered table-striped">
             <thead>
                 <tr>
                   <th>NO</th>
@@ -104,7 +87,7 @@
                 entries
             </div> --}}
 
-      {{-- </div> --}}
+     
       <div class="pull-right">
         {{ $data->links() }}
   </div>

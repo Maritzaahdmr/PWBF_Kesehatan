@@ -58,7 +58,7 @@ Route::post('/kecamatan/update','App\Http\Controllers\KecamatanController@update
 Route::get('/hapuskecamatan{ID_KECAMATAN}','App\Http\Controllers\KecamatanController@hapus');
 Route::get('/trashkecamatan', 'App\Http\Controllers\KecamatanController@trash');
 Route::get('/restorekecamatan{ID_KECAMATAN?}', 'App\Http\Controllers\KecamatanController@restore');
-Route::get('/kecamtan/cari','App\Http\Controllers\KeController@cari');
+Route::get('/kecamatan/cari','App\Http\Controllers\KecamatanController@cari');
 Route::get('/kelurahan', [kelurahanController::class, 'index'] );
 
 Route::get('/createkelurahan','App\Http\Controllers\KelurahanController@tambah');
