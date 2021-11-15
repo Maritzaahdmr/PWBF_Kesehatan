@@ -13,7 +13,12 @@ class KelurahanController extends Controller
 {
     public function index(){
         //ambil data dari table kelurahan
-        $kelurahan = DB::table('kelurahan')->where('DELETED_AT',null)->simplePaginate(4);
+        $kelurahan = DB::table('kelurahan')->where('DELETED_AT',null)->Paginate(4);
+        // $kelurahan = kelurahan::latest();
+
+        // if(request('search')){
+        //     $kelurahan = DB::table('kelurahan')->where('KELURAHAN','like',"%". request->search."%")->get();
+        // }
 
         // mengirim data ke view kelurahan
         return view('kelurahan', [
@@ -21,7 +26,21 @@ class KelurahanController extends Controller
         ]);
         
     }
-        
+    public function cari(Request $request)
+	{
+		// menangkap data pencarian
+		$cari = $request->cari;
+ 
+    		// mengambil data dari table kelurahan sesuai pencarian data
+		$kelurahan = DB::table('kelurahan')
+		->where('KELURAHAN','like',"%".$cari."%")
+		->paginate();
+ 
+    		// mengirim data kelurahan ke view index
+		return view('kelurahan',['data' => $kelurahan]);
+ 
+	}
+    
     public function tambah(){
         $kecamatans = kecamatan::all();
         return view('createkelurahan', compact('kecamatans'));
@@ -69,7 +88,7 @@ class KelurahanController extends Controller
         ]);
     
         // alihkan halaman ke halaman siswa
-        return redirect('/kelurahan');
+        return redirect('/kelurahan')->with('status','Data Kelurahan berhasil di update!');
         }
 
     // public function delete($id){

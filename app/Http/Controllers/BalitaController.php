@@ -13,7 +13,7 @@ class BalitaController extends Controller
 {
     public function index(){
         //ambil data dari table kelurahan
-        $balita = DB::table('balita')->where('DELETED_AT',null)->simplePaginate(4);
+        $balita = DB::table('balita')->where('DELETED_AT',null)->Paginate(4);
 
         // mengirim data ke view kelurahan
         return view('balita', [
@@ -21,6 +21,21 @@ class BalitaController extends Controller
         ]);
         
     }
+
+    public function cari(Request $request)
+	{
+		// menangkap data pencarian
+		$cari = $request->cari;
+ 
+    		// mengambil data dari table kelurahan sesuai pencarian data
+		$balita = DB::table('balita')
+		->where('NAMA_BALITA','like',"%".$cari."%")
+		->paginate();
+ 
+    		// mengirim data kelurahan ke view index
+		return view('balita',['data' => $balita]);
+ 
+	}
 
     public function tambah(){
         $posyandus = posyandu::all();
@@ -81,7 +96,7 @@ class BalitaController extends Controller
         ]);
     
         // alihkan halaman ke halaman siswa
-        return redirect('/balita');
+        return redirect('/balita')->with('status','Data Balita berhasil di update!');
         }
 
         public function hapus($id){
