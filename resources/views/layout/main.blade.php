@@ -89,15 +89,28 @@
                   <img src="img/logo.png" alt="" width="150" height="40" />
               </a>
         </div>
-    
-        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="/index">Home</a></li>
-            <li><a href="/agenda">Agenda</a></li>
-            <li><a href="/">Statistik</a></li>
-            <li><a href="/login">Login Posyandu</a></li>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav pull-right mainNav">
+                <li class="nav-item"><a href="/">Home</a></li>
+                <li class="nav-item"><a href="/agenda">Agenda</a></li>
+                <li class="nav-item"><a href="/home">Statistik</a></li>
+                <li class="nav-item"><a href="/login">Login Posyandu</a></li>
+            </ul>
+          </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        
+            {{-- <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="/login"  >Login Posyandu</a>
+                <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li> --}}
           </ul>
+        </div>
         </div>
         <!-- /.navbar-collapse -->
       </div>

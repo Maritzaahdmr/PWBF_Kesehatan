@@ -7,7 +7,8 @@ use App\Http\Controllers\PosyanduController;
 use App\Http\Controllers\BalitaController;
 use App\Http\Controllers\History_PosyanduController;
 use App\Http\Controllers\RoleController;
-
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegistrasiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,16 +21,16 @@ use App\Http\Controllers\RoleController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('home');
 });
 // Route::get('/', function () {
 //     return view('table');
 // });
-Route::get('/', function () {
+Route::get('/grafik', function () {
     return view('grafik');
 });
-Route::get('/index', function () {
+Route::get('/', function () {
     return view('index');
 });
 Route::get('/login', function () {
@@ -39,8 +40,11 @@ Route::get('/agenda', function () {
     return view('agenda');
 });
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('grafik');
+});
+Route::get('/registrasi', function () {
+    return view('registrasi');
 });
 // Route::get('/kecamatan/create', function () {
 //     return view('create');
@@ -115,4 +119,9 @@ Route::post('/history_posyandu/update','App\Http\Controllers\History_PosyanduCon
 Route::get('/history_posyandu/printhistory_posyandu', [History_PosyanduController::class, 'printhistory_posyandu'] );
 Route::get('/trashhistory_posyandu', 'App\Http\Controllers\History_PosyanduController@trash');
 Route::get('/restorehistory_posyandu{ID_HISTORY_POSYANDU?}', 'App\Http\Controllers\History_PosyanduController@restore');
+
+Route::get('/login', [LoginController::class, 'login'] );
+Route::post('/postlogin','App\Http\Controllers\LoginController@login');
+Route::get('/registrasi', [RegistrasiController::class, 'login'] );
+Route::post('/registrasi','App\Http\Controllers\RegistrasiController@store');
 ?>
