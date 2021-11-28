@@ -21,8 +21,8 @@ use App\Http\Controllers\RegistrasiController;
 |
 */
 
-Route::get('/home', function () {
-    return view('home');
+Route::get('/index', function () {
+    return view('index');
 });
 // Route::get('/', function () {
 //     return view('table');
@@ -120,8 +120,10 @@ Route::get('/history_posyandu/printhistory_posyandu', [History_PosyanduControlle
 Route::get('/trashhistory_posyandu', 'App\Http\Controllers\History_PosyanduController@trash');
 Route::get('/restorehistory_posyandu{ID_HISTORY_POSYANDU?}', 'App\Http\Controllers\History_PosyanduController@restore');
 
-Route::get('/login', [LoginController::class, 'login'] );
-Route::post('/postlogin','App\Http\Controllers\LoginController@login');
+Route::get('/login', [LoginController::class, 'login'] )->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'authenticate'] );
+Route::get('/logout', [LoginController::class, 'logout'] );
+
 Route::get('/registrasi', [RegistrasiController::class, 'login'] );
 Route::post('/registrasi','App\Http\Controllers\RegistrasiController@store');
 ?>

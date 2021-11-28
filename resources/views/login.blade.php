@@ -20,16 +20,29 @@
                        {{ session('success') }}
                       </div>
                       @endif
+
+                      @if(session()->has('LoginError'))
+                      <div class="alert alert-danger" role="alert">
+                       {{ session('LoginError') }}
+                      </div>
+                      @endif
+
                       <div class="panel-body">
                         <div id="sendmessage">Login</div>
-                          <form class="contactForm lead" role="form" action="/postlogin" method="post">
-                            {{ csrf_field() }}
+                          <form class="contactForm lead" role="form" action="/login" method="post">
+                            @csrf
                           <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12">
                               <div class="form-group">
-                                <label>Username</label>
-                                <input type="text" name="username" id="username" class="form-control input-md" data-rule="minlen:3" value="" data-msg="Please enter at least 3 chars">
+                                <label>Email</label>
+                                <input type="text" name="email" id="email" class="form-control input-md @error('email') is-invalid @enderror" 
+                                data-rule="minlen:3" value="" data-msg="Please enter at least 3 chars" values="{{ old ('email') }}">
                                 <div class="validation"></div>
+                                @error('email')
+                                  <div class="invalid-feedback">
+                                    {{ $message }}
+                                  </div>
+                                @enderror
                               </div>
                             </div>
                           </div>
@@ -37,7 +50,8 @@
                             <div class="col-xs-12 col-sm-12 col-md-12">
                               <div class="form-group">
                                 <label>Password</label>
-                                <input  type="password" name="password" id="password"  value="" class="form-control input-md" data-rule="required" data-msg="The phone number is required">
+                                <input  type="password" name="password" id="password"  value="" class="form-control input-md" 
+                                data-rule="required" data-msg="The phone number is required" required>
                                 <div class="validation"></div>
                               </div>
                             </div>
