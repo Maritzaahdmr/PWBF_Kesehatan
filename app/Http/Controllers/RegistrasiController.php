@@ -14,7 +14,7 @@ class RegistrasiController extends Controller
     public function store(Request $request){
         $validatedData = $request->validate([
             'name' => 'required|max:255',
-            'email' => 'required|email|unique:users',
+            'email' => 'required|email:dns|unique:users',
             'password' => 'required|min:3|max:255',
             'remember_token' => 'required|min:3|max:255',
         ]);

@@ -23,8 +23,13 @@
                             <div class="col-xs-12 col-sm-12 col-md-12">
                               <div class="form-group">
                                 <label>Username</label>
-                                <input type="text" name="name" id="name" class="form-control input-md" data-rule="minlen:3" value="" data-msg="Please enter at least 3 chars">
-                                <div class="validation"></div>
+                                @error('name')
+                                <div class="invalid-feedback">
+                                  {{ $message }}
+                                </div>
+                                @enderror
+                                <input type="text" name="name" id="name" class="form-control input-md" data-rule="minlen:3" value="{{ old('name') }}" data-msg="Please enter at least 3 chars">
+                                <div class="@error('name') validation @enderror"></div>
                               </div>
                             </div>
                           </div>
@@ -32,8 +37,13 @@
                             <div class="col-xs-12 col-sm-12 col-md-12">
                               <div class="form-group">
                                 <label>Alamat Email</label>
-                                <input  type="text" name="email" id="email"  value="" class="form-control input-md" data-rule="required" data-msg="The phone number is required">
-                                <div class="validation"></div>
+                                @error('email')
+                                <div class="invalid-feedback">
+                                  {{ $message }}
+                                </div>
+                                @enderror
+                                <input  type="text" name="email" id="email"  value="{{ old('email') }}" class="form-control input-md" data-rule="required" data-msg="The phone number is required">
+                                <div class="@error('email')validation @enderror"></div>
                               </div>
                             </div>
                           </div>
@@ -41,8 +51,13 @@
                             <div class="col-xs-12 col-sm-12 col-md-12">
                               <div class="form-group">
                                 <label>Password</label>
+                                @error('password')
+                                <div class="invalid-feedback">
+                                  {{ $message }}
+                                </div>
+                                @enderror
                                 <input  type="password" name="password" id="password"  value="" class="form-control input-md" data-rule="required" data-msg="The phone number is required">
-                                <div class="validation"></div>
+                                <div class="@error('password') validation @enderror"></div>
                               </div>
                             </div>
                           </div>
@@ -50,8 +65,13 @@
                             <div class="col-xs-12 col-sm-12 col-md-12">
                               <div class="form-group">
                                 <label>Repeat password</label>
+                                @error('password')
+                                <div class="invalid-feedback">
+                                  {{ $message }}
+                                </div>
+                                @enderror
                                 <input  type="password" name="remember_token" id="password"  value="" class="form-control input-md" data-rule="required" data-msg="The phone number is required">
-                                <div class="validation"></div>
+                                <div class="@error('password') validation @enderror"></div>
                               </div>
                             </div>
                           </div>

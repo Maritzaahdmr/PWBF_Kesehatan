@@ -39,19 +39,22 @@ Route::get('/login', function () {
 Route::get('/agenda', function () {
     return view('agenda');
 });
-
-Route::get('/home', function () {
-    return view('grafik');
-});
 Route::get('/registrasi', function () {
     return view('registrasi');
 });
+Route::group(['middleware'=>'auth'],function(){
+Route::get('/home', function () {
+    return view('grafik');
+});
+
 // Route::get('/kecamatan/create', function () {
 //     return view('create');
 // });
 // Route::get('/', function () {
 //     return view('posyandu');
 // });
+
+
 Route::get('/kecamatan', [KecamatanController::class, 'index'] );
 
 Route::get('/createkecamatan','App\Http\Controllers\KecamatanController@tambah');
@@ -119,7 +122,7 @@ Route::post('/history_posyandu/update','App\Http\Controllers\History_PosyanduCon
 Route::get('/history_posyandu/printhistory_posyandu', [History_PosyanduController::class, 'printhistory_posyandu'] );
 Route::get('/trashhistory_posyandu', 'App\Http\Controllers\History_PosyanduController@trash');
 Route::get('/restorehistory_posyandu{ID_HISTORY_POSYANDU?}', 'App\Http\Controllers\History_PosyanduController@restore');
-
+});
 Route::get('/login', [LoginController::class, 'login'] )->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate'] );
 Route::get('/logout', [LoginController::class, 'logout'] );
