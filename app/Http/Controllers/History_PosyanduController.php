@@ -21,6 +21,21 @@ class History_PosyanduController extends Controller
         ]);
         
     }
+    public function cari(Request $request)
+	{
+		// menangkap data pencarian
+		$cari = $request->cari;
+ 
+    		// mengambil data dari table kelurahan sesuai pencarian data
+		$history_posyandu = DB::table('history_posyandu')
+		->where('HISTORY_POSYANDU','like',"%".$cari."%")
+		->paginate();
+ 
+    		// mengirim data kelurahan ke view index
+		return view('history_posyandu',['data' => $history_posyandu]);
+ 
+	}
+
     public function tambah(){
         $balitas = balita::all();
         return view('createhistory_posyandu', compact('balitas'));

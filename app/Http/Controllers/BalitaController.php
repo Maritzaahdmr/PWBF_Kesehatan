@@ -43,32 +43,32 @@ class BalitaController extends Controller
     }
 
     public function store(Request $request){
-        $balita = new balita;
-        $balita->ID_BALITA= $request->id_bal;
-        $balita->ID_POSYANDU= $request->id_pos;
-        $balita->NAMA_BALITA = $request->balita;
-        $balita->NIK_ORANG_TUA= $request->NIK;
-        $balita->NAMA_ORANG_TUA= $request->nama;
-        $balita->TGL_LAHIR_BALITA= $request->tgl;
-        $balita->JENIS_KELAMIN_BALITA= $request->jk;
-        $balita->STATUS= $request->status;
+        // $balita = new balita;
+        // $balita->ID_BALITA= $request->id_bal;
+        // $balita->ID_POSYANDU= $request->id_pos;
+        // $balita->NAMA_BALITA = $request->balita;
+        // $balita->NIK_ORANG_TUA= $request->NIK;
+        // $balita->NAMA_ORANG_TUA= $request->nama;
+        // $balita->TGL_LAHIR_BALITA= $request->tgl;
+        // $balita->JENIS_KELAMIN_BALITA= $request->jk;
+        // $balita->STATUS= $request->status;
 
-        if($balita->save()){
-            echo "
-            <script>
-                alert('Data berhasil ditambahkan');
-                document.location.href='/balita'
-            </script>
-            ";
-        }else{
-            echo "
-            <script>
-                alert('Data gagal ditambahkan');
-                document.location.href='/createbalita'
-            </script>
-            ";
-        }
-
+        // if($balita->save()){
+        //     echo "
+        //     <script>
+        //         alert('Data berhasil ditambahkan');
+        //         document.location.href='/balita'
+        //     </script>
+        //     ";
+        // }else{
+        //     echo "
+        //     <script>
+        //         alert('Data gagal ditambahkan');
+        //         document.location.href='/createbalita'
+        //     </script>
+        //     ";
+        // }
+            dd($request->all());
 
     }
 

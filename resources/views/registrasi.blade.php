@@ -47,6 +47,15 @@
                               </div>
                             </div>
                           </div>
+                          <div class="form-group">
+                            <label class="">Peran</label>
+                            <select name="id_role" class="form-control">
+                              <option value="">-pilih-</option>
+                                  @foreach ($roles as $data)
+                              <option value="{{ $data->ID_ROLE }}">{{ $data->ROLE }}</option>
+                              @endforeach
+                            </select>
+                            </div>
                           <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12">
                               <div class="form-group">
