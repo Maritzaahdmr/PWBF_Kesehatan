@@ -56,8 +56,8 @@
                   <td>
                     <a href="/editkecamatan{{ $kecamatan->ID_KECAMATAN }}"><i class="far fa-edit"></i></a> |
                      {{-- <a href="hapuskecamatan{{ $kecamatan->ID_KECAMATAN }}"><i class="fas fa-trash-alt" style="color :red"></i></a> --}}
-                     <form action="{{ url('hapus'.$kecamatan->ID_KECAMATAN) }}" method="GET" class="d-inline" onsubmit="return confirm('Hapus Data ?')">
-                      @method('hapus')
+                     <form action="{{ url('hapuskecamatan'.$kecamatan->ID_KECAMATAN) }}" method="GET" class="d-inline" onsubmit="return confirm('Hapus Data ?')">
+                      @method('hapuskecamatan')
                       @csrf
                       <button class="btn btn-danger btn-sm">
                         <i class="fas fa-trash-alt"></i></button>

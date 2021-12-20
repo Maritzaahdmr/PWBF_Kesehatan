@@ -86,7 +86,7 @@ Route::post('/posyandu/store','App\Http\Controllers\PosyanduController@store');
 Route::get('/editposyandu{ID_POSYANDU}','App\Http\Controllers\PosyanduController@edit');
 Route::post('/posyandu/update','App\Http\Controllers\PosyanduController@update');
 Route::get('/hapusposyandu{ID_POSYANDU}','App\Http\Controllers\PosyanduController@hapus');
-Route::get('/kelurahan/printposyandu', [PosyanduController::class, 'printposyandu'] );
+Route::get('/posyandu/printposyandu', [PosyanduController::class, 'printposyandu'] );
 Route::get('/trashposyandu', 'App\Http\Controllers\PosyanduController@trash');
 Route::get('/restoreposyandu{ID_POSYANDU?}', 'App\Http\Controllers\PosyanduController@restore');
 Route::get('/posyandu/printposyandu', [PosyanduController::class, 'printposyandu'] );

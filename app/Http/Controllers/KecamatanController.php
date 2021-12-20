@@ -14,6 +14,7 @@ class KecamatanController extends Controller
     public function index(){
         //ambil data dari table kecamatan
         // $kecamatan = Kecamatan::with('Kecamatan')->paginate(5);
+        $kecamatan = kecamatan::all();
         $kecamatan = DB::table('kecamatan')->where('DELETED_AT',null)->Paginate(5);
 
         // mengirim data ke view kecamatan
@@ -113,6 +114,7 @@ class KecamatanController extends Controller
         // return redirect('/kecamatan');
      
         // menampilkan data guru yang sudah dihapus
+        
         public function trash()
         {
     	// mengampil data guru yang sudah dihapus

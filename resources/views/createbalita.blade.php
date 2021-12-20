@@ -48,14 +48,18 @@
               <label class="">JENIS KELAMIN</label>
                 <input type="text" name="jk"  required="required"  maxlegenght="20" size="30" ></td>
           </div>
-          <div class="form-check">
-            <label class="">STATUS</label><br>
-              {{-- <input type="radio" name="status"  required="required"  maxlegenght="20" size="30" ></td> --}}
-              <td><input type="radio" name="status"  required="required" checked="checked">Sehat</td>
+          <div class="form-group">
+            <label class="radio-inline">STATUS</label><br>
+              {{-- <input type="text" name="status"  required="required"  maxlegenght="20" size="30" ></td> --}}
+              {{-- <td><input type="radio" name="status"  required="required" checked="checked">Sehat</td>
               <td><input type="radio" name="status"  required="required" checked="checked">Sunting</td>
               <td><input type="radio" name="status"  required="required" checked="checked">DBD</td>
-              <td><input type="radio" name="status"  required="required" checked="checked">Campak</td>
-        </div>
+              <td><input type="radio" name="status"  required="required" checked="checked">Campak</td> --}}
+                <input type="radio" name="status" required="required" value="sehat">  Sehat 
+                <input type="radio" name="status" required="required" value="sunting">  Stunting
+                <input type="radio" name="status" required="required" value="DBD">  DBD 
+                <input type="radio" name="status" required="required" value="Campak">  Campak
+          </div>
              {{-- <div class="form-group">
               <label class="">Created_At</label>
                 <input type="datetime-local" name="Created_At" required="required"></td>

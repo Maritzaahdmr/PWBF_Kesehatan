@@ -29,7 +29,7 @@
             </select>
             </div>
             <div class="form-group">
-                <label class="">Kelurahan</label>
+                <label class="">Kelurahan</label><br>
                   <input type="text" name="Kelurahan"  required="required"  ></td>
              </div>
              {{-- <div class="form-group">
