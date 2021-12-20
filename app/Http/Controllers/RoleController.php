@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\role;
+use App\Models\user;
 use App\Models\trasgrole;
 use App\createrole;
 
@@ -21,15 +22,16 @@ class RoleController extends Controller
         
 }
 
-public function tambah(){
+public function tambah(){ 
     return view('createrole');
 }
 
 public function store(Request $request){
+    //insert table role
     $role = new role; 
     $role->ID_ROLE = $request->id_role;
     $role->ROLE= $request->Role;
-
+    
     if($role->save()){
         echo "
         <script>

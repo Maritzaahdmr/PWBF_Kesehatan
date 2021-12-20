@@ -42,7 +42,7 @@ Route::get('/agenda', function () {
 Route::get('/registrasi', function () {
     return view('registrasi');
 });
-Route::group(['middleware'=>'auth'],function(){
+Route::group(['middleware' => ['auth']], function(){
 Route::get('/home', function () {
     return view('grafik');
 });
@@ -92,7 +92,7 @@ Route::get('/restoreposyandu{ID_POSYANDU?}', 'App\Http\Controllers\PosyanduContr
 Route::get('/posyandu/printposyandu', [PosyanduController::class, 'printposyandu'] );
 Route::get('/posyandu/cari','App\Http\Controllers\PosyanduController@cari');
 
-
+// Route::group(['middleware' => ['auth','checkRole:1,2']], function(){
 Route::get('/balita', [BalitaController::class, 'index'] );
 
 Route::get('/createbalita','App\Http\Controllers\BalitaController@tambah');
@@ -105,6 +105,15 @@ Route::get('/balita/printbalita', [BalitaController::class, 'printbalita'] );
 Route::get('/trashbalita', 'App\Http\Controllers\BalitaController@trash');
 Route::get('/restorebalita{ID_BALITA?}', 'App\Http\Controllers\BalitaController@restore');
 
+Route::get('/history_posyandu', [History_PosyanduController::class, 'index'] );
+Route::get('/createhistory_posyandu','App\Http\Controllers\History_PosyanduController@tambah');
+Route::post('/history_posyandu/store','App\Http\Controllers\History_PosyanduController@store');
+Route::get('/edithistory_posyandu{ID_HISTORY_POSYANDU}','App\Http\Controllers\History_PosyanduController@edit');
+Route::post('/history_posyandu/update','App\Http\Controllers\History_PosyanduController@update');
+Route::get('/history_posyandu/printhistory_posyandu', [History_PosyanduController::class, 'printhistory_posyandu'] );
+Route::get('/trashhistory_posyandu', 'App\Http\Controllers\History_PosyanduController@trash');
+Route::get('/restorehistory_posyandu{ID_HISTORY_POSYANDU?}', 'App\Http\Controllers\History_PosyanduController@restore');
+
 Route::get('/role', [RoleController::class, 'index'] );
 Route::get('/createrole','App\Http\Controllers\RoleController@tambah');
 Route::post('/role/store','App\Http\Controllers\RoleController@store');
@@ -114,15 +123,12 @@ Route::get('/hapusrole{ID_ROLE}','App\Http\Controllers\RoleController@hapus');
 Route::get('/trashrole', 'App\Http\Controllers\RoleController@trash');
 Route::get('/restorerole{ID_ROLE?}', 'App\Http\Controllers\RoleController@restore');
 
-Route::get('/history_posyandu', [History_PosyanduController::class, 'index'] );
-Route::get('/createhistory_posyandu','App\Http\Controllers\History_PosyanduController@tambah');
-Route::post('/history_posyandu/store','App\Http\Controllers\History_PosyanduController@store');
-Route::get('/edithistory_posyandu{ID_HISTORY_POSYANDU}','App\Http\Controllers\History_PosyanduController@edit');
-Route::post('/history_posyandu/update','App\Http\Controllers\History_PosyanduController@update');
-Route::get('/history_posyandu/printhistory_posyandu', [History_PosyanduController::class, 'printhistory_posyandu'] );
-Route::get('/trashhistory_posyandu', 'App\Http\Controllers\History_PosyanduController@trash');
-Route::get('/restorehistory_posyandu{ID_HISTORY_POSYANDU?}', 'App\Http\Controllers\History_PosyanduController@restore');
+
+
+Route::get('/users',[UserController::class,'index'] );
+Route::get('/users/create',[UserController::class,'create']) ;
 });
+
 Route::get('/login', [LoginController::class, 'login'] )->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate'] );
 Route::get('/logout', [LoginController::class, 'logout'] );

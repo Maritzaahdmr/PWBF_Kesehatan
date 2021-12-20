@@ -188,6 +188,7 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
+              @if(auth()->user()->ID_ROLE=='1')
               <li class="nav-item">
                 <a href="/kecamatan" class="nav-link">
                   <i class="fas fa-city"></i>
@@ -207,14 +208,15 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a href="/role" class="nav-link">
+                  <p>Role</p>
+                </a>
+              </li>
+              @endif
+              <li class="nav-item">
                 <a href="/balita" class="nav-link">
                   <i class="fas fa-baby-carriage"></i>
                   <p>Balita</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/role" class="nav-link">
-                  <p>Role</p>
                 </a>
               </li>
 
@@ -234,14 +236,14 @@
 
                   <ul class="nav nav-treeview" style="display: block;">
                     
-
+                  
                     <li class="nav-item">
                       <a href="/history_posyandu" class="nav-link">
                         <i class="fas fa-book"></i>
                         <p>History_Posyandu</p>
                       </a>
                     </li>
-
+              
                     {{-- <li class="nav-item">
                       <a class="nav-link" href ="../tables/simple.html">
                         <i class="far fa-circle nav-icon">

@@ -8,6 +8,20 @@
       </div>
       <!-- /.card-header -->
       <div class="card-body">
+
+        <div class="card-body">
+          <form action="/kelurahan/cari" method="get">
+           <div class="input-group input-group-sm">
+               <input type="text" class="form-control form-control-navbar" name="cari" value="{{ request('cari') }}"
+               placeholder="Ketikan sesuatu" aria-label="Search" >
+               <div class="input-group-append">
+               <button class="btn btn-navbar" type="submit">
+                 <i class="fas fa-search"></i>
+               </button>
+               </div>
+           </div>
+              </form>
+              <br>
         <p><a href="createhistory_posyandu"<button type="button" class="btn btn-primary">Tambah Data</button></a> | 
           <a href="/history_posyandu/printhistory_posyandu" target="_blank" class="btn btn-danger">Print PDF</a> | 
           <a href="trashhistory_posyandu"<button type="button" class="btn btn-warning">Sampah</button></a>

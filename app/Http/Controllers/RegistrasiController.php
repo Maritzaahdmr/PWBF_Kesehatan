@@ -3,25 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
-
+use App\Models\users;
+use App\Models\Role;
+use Illuminate\Support\Str;
 class RegistrasiController extends Controller
 {
     public function login(){
-        return view('registrasi');
+        $roles = role::all();
+    
+        return view('registrasi',compact('roles'));
     }
 
     public function store(Request $request){
-        $validatedData = $request->validate([
-            'name' => 'required|max:255',
-            'email' => 'required|email:dns|unique:users',
-            'password' => 'required|min:3|max:255',
-            'remember_token' => 'required|min:3|max:255',
-        ]);
+        users::create([
+            'id' => request('id'),
+            'id_role' => request('id_role'),
+            'name' => request('name'),
+            'email' => request('email'), 
+            'password'=>bcrypt($request->password),
+            'remember_token' => Str::random(10),
+       ]);
 
-        $validatedData['password'] = bcrypt($validatedData['password']);
+        // $validatedData['password'] = bcrypt($validatedData['password']);
        
-        user::create($validatedData);
+        // user::create($validatedData);
 
         $request->session()->flash('success','Registrastuin successfull ! Please login');
         
