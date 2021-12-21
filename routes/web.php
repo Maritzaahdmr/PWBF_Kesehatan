@@ -104,6 +104,7 @@ Route::get('/balita/cari','App\Http\Controllers\BalitaController@cari');
 Route::get('/balita/printbalita', [BalitaController::class, 'printbalita'] );
 Route::get('/trashbalita', 'App\Http\Controllers\BalitaController@trash');
 Route::get('/restorebalita{ID_BALITA?}', 'App\Http\Controllers\BalitaController@restore');
+Route::get('/balita/cari','App\Http\Controllers\BalitaController@cari');
 
 Route::get('/history_posyandu', [History_PosyanduController::class, 'index'] );
 Route::get('/createhistory_posyandu','App\Http\Controllers\History_PosyanduController@tambah');
@@ -113,6 +114,7 @@ Route::post('/history_posyandu/update','App\Http\Controllers\History_PosyanduCon
 Route::get('/history_posyandu/printhistory_posyandu', [History_PosyanduController::class, 'printhistory_posyandu'] );
 Route::get('/trashhistory_posyandu', 'App\Http\Controllers\History_PosyanduController@trash');
 Route::get('/restorehistory_posyandu{ID_HISTORY_POSYANDU?}', 'App\Http\Controllers\History_PosyanduController@restore');
+Route::get('/history_posyandu/cari','App\Http\Controllers\History_PosyanduController@cari');
 
 Route::get('/role', [RoleController::class, 'index'] );
 Route::get('/createrole','App\Http\Controllers\RoleController@tambah');
