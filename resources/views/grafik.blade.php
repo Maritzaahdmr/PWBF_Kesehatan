@@ -77,8 +77,8 @@
 
               <!-- /.progress-group -->
               <div class="progress-group">
-                Kekurangan Gizi
-                <span class="float-right"><b>9</b>/200</span>
+                  Sehat
+                <span class="float-right"><b>191</b>/200</span>
                 <div class="progress progress-sm">
                   <div class="progress-bar bg-warning" style="width: 70%"></div>
                 </div>

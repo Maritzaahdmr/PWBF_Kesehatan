@@ -111,6 +111,7 @@ Route::get('/createhistory_posyandu','App\Http\Controllers\History_PosyanduContr
 Route::post('/history_posyandu/store','App\Http\Controllers\History_PosyanduController@store');
 Route::get('/edithistory_posyandu{ID_HISTORY_POSYANDU}','App\Http\Controllers\History_PosyanduController@edit');
 Route::post('/history_posyandu/update','App\Http\Controllers\History_PosyanduController@update');
+Route::get('/hapus/history_posyandu{ID_HISTORY_POSYANDU}','App\Http\Controllers\History_PosyanduController@hapus');
 Route::get('/history_posyandu/printhistory_posyandu', [History_PosyanduController::class, 'printhistory_posyandu'] );
 Route::get('/trashhistory_posyandu', 'App\Http\Controllers\History_PosyanduController@trash');
 Route::get('/restorehistory_posyandu{ID_HISTORY_POSYANDU?}', 'App\Http\Controllers\History_PosyanduController@restore');

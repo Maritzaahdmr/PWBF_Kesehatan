@@ -93,6 +93,15 @@ class History_PosyanduController extends Controller
         return redirect('/history_posyandu');
         }
     
+        public function hapus($id){
+            date_default_timezone_set('Asia/Jakarta');
+            DB::table('history_posyandu')->where('ID_HISTORY_POSYANDU',$id)->update([
+                'DELETED_AT' => date('Y-m-d H:i:s')
+            ]);
+     
+            return redirect('history_posyandu');
+        }
+    
  
         public function printhistory_posyandu(){
             //ambil data dari table history
