@@ -184,7 +184,7 @@
               <p>
                 Data Master
                 <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">4</span>
+                {{-- <span class="badge badge-info right">4</span> --}}
               </p>
             </a>
             <ul class="nav nav-treeview">
@@ -229,7 +229,7 @@
                     <p>
                       Data Transaksi
                       <i class="fas fa-angle-left right"></i>
-                      <span class="badge badge-info right">2</span>
+                      {{-- <span class="badge badge-info right">2</span> --}}
 
                     </p>
                   </a>

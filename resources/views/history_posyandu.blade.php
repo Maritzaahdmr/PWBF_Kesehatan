@@ -10,7 +10,7 @@
       <div class="card-body">
 
         <div class="card-body">
-          <form action="/kelurahan/cari" method="get">
+          <form action="/history_posyandu/cari" method="get">
            <div class="input-group input-group-sm">
                <input type="text" class="form-control form-control-navbar" name="cari" value="{{ request('cari') }}"
                placeholder="Ketikan sesuatu" aria-label="Search" >
@@ -50,7 +50,14 @@
             {{-- <td>{{ $history_posyandu->CREATED_AT }}</td>
             <td>{{ $history_posyandu->UPDATED_AT }}</td> --}}
             <td>
-              <a href="edithistory_posyandu{{ $history_posyandu->ID_HISTORY_POSYANDU }}"><i class="far fa-edit"></i></a> |  <a href="#"><i class="fas fa-trash-alt" style="color :red"></i></a>
+              <a href="edithistory_posyandu{{ $history_posyandu->ID_HISTORY_POSYANDU }}"><i class="far fa-edit"></i></a> |
+              <form action="{{ url('hapus/history_posyandu'.$history_posyandu->ID_HISTORY_POSYANDU) }}" method="GET" class="d-inline" onsubmit="return confirm('Hapus Data ?')">
+                @method('hapushistory_posyandu')
+                @csrf
+                <button class="btn btn-danger btn-sm">
+                  <i class="fas fa-trash-alt"></i></button>
+                    {{-- <i class="fa fa-trash"></i></button> --}}
+            </form>
             </td>
 
           </tr>
