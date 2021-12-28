@@ -114,7 +114,9 @@ class KelurahanController extends Controller
 
     public function printkelurahan(){
         //ambil data dari table kelurahan
-        $kelurahan = DB::table('kelurahan')->where('DELETED_AT',null)->get();
+        $kelurahan = DB::table('kelurahan')
+        ->join('kecamatan','kecamatan.ID_KECAMATAN', '=','kelurahan.ID_KECAMATAN')  
+        ->where('kelurahan.DELETED_AT',null)->get();
 
         // mengirim data ke view kelurahan
         return view('printkelurahan', [

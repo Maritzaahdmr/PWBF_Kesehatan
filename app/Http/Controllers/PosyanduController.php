@@ -107,7 +107,9 @@ class PosyanduController extends Controller
     
         public function printposyandu(){
             //ambil data dari table posyandu
-            $posyandu = DB::table('posyandu')->where('DELETED_AT',null)->get();
+            $posyandu = DB::table('posyandu')
+            ->join('kelurahan', 'kelurahan.ID_KELURAHAN', '=', 'posyandu.ID_KELURAHAN')
+            ->where('posyandu.DELETED_AT',null)->get();
     
             // mengirim data ke view kelurahan
             return view('printposyandu', [

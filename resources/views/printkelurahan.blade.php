@@ -55,7 +55,7 @@
           <tr>
             <th>NO</th>
             <th>ID Kelurahan</th>
-            <th>ID Kecamatan</th>
+            <th>Kecamatan</th>
             <th>Kelurahan</th>
           </tr>
           </thead>
@@ -65,7 +65,7 @@
           <tr>
             <td>{{ $no++ }}</td>
             <td>{{ $kelurahan->ID_KELURAHAN }}</td>
-            <td>{{ $kelurahan->ID_KECAMATAN }}</td>
+            <td>{{ $kelurahan->KECAMATAN }}</td>
             <td>{{ $kelurahan->KELURAHAN }}</td>
           </tr>
           @endforeach

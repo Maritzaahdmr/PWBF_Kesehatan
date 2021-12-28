@@ -56,7 +56,7 @@
           <tr>
             <th>NO</th>
             <th>ID Posyandu</th>
-            <th>ID Kelurahan</th>
+            <th>Kelurahan</th>
             <th>Nama Posyandu</th>
             <th>Alamat Posyandu</th>
           </tr>
@@ -67,7 +67,7 @@
           <tr>
             <td>{{ $no++ }}</td>
             <td>{{ $posyandu->ID_POSYANDU }}</td>
-            <td>{{ $posyandu->ID_KELURAHAN }}</td>
+            <td>{{ $posyandu->KELURAHAN }}</td>
             <td>{{ $posyandu->NAMA_POSYANDU }}</td>
             <td>{{ $posyandu->ALAMAT_POSYANDU }}</td>
           </tr>

@@ -96,7 +96,8 @@ class History_PosyanduController extends Controller
  
         public function printhistory_posyandu(){
             //ambil data dari table history
-            $history_posyandu = DB::table('history_posyandu')->get();
+            $history_posyandu = DB::table('history_posyandu')
+            ->join('balita', 'balita.ID_BALITA', '=', 'history_posyandu.ID_BALITA')->get();
     
             // mengirim data ke view history
             return view('printhistory_posyandu', [

@@ -55,7 +55,7 @@
           <tr>
             <th>NO</th>
             <th>ID History Posyandu</th>
-            <th>ID Balita</th>
+            <th>Nama Balita</th>
             <th>Tanggal Posyandu</th>
             <th>BB Balita (Kg)</th>
             <th>TB Balita (Cm)</th>
@@ -67,7 +67,7 @@
           <tr>
             <td>{{ $no++ }}</td>
             <td>{{ $history_posyandu->ID_HISTORY_POSYANDU }}</td>
-            <td>{{ $history_posyandu->ID_BALITA }}</td>
+            <td>{{ $history_posyandu->NAMA_BALITA }}</td>
             <td>{{ $history_posyandu->TGL_POSYANDU }}</td>
             <td>{{ $history_posyandu->BERAT_BADAN_BALITA }}</td>
             <td>{{ $history_posyandu->TINGGI_BADAN }}</td>

@@ -60,8 +60,8 @@
             <td>
               <a href="/editbalita{{ $balita->ID_BALITA }}"><i class="far fa-edit"></i></a> | 
                {{-- <a href="/hapusbalita{{ $balita->ID_BALITA }}"><i class="fas fa-trash-alt" style="color :red"></i></a> --}}
-               <form action="{{ url('hapus'.$balita->ID_BALITA) }}" method="GET" class="d-inline" onsubmit="return confirm('Hapus Data ?')">
-                @method('hapus')
+               <form action="{{ url('/balita/hapus'.$balita->ID_BALITA) }}" method="GET" class="d-inline" onsubmit="return confirm('Hapus Data ?')">
+                @method('/balita/hapus')
                 @csrf
                 <button class="btn btn-danger btn-sm">
                   <i class="fas fa-trash-alt"></i></button>

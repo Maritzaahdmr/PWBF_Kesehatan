@@ -55,7 +55,7 @@
           <tr>
             <th>NO</th>
             <th>ID Balita</th>
-            <th>ID Posyandu</th>
+            <th>Nama Posyandu</th>
             <th>Nama Balita</th>
             <th>NIK</th>
             <th>Nama Ortu</th>
@@ -70,7 +70,7 @@
           <tr>
             <td>{{ $no++ }}</td>
             <td>{{ $balita->ID_BALITA }}</td>
-            <td>{{ $balita->ID_POSYANDU }}</td>
+            <td>{{ $balita->NAMA_POSYANDU }}</td>
             <td>{{ $balita->NAMA_BALITA }}</td>
             <td>{{ $balita->NIK_ORANG_TUA }}</td>
             <td>{{ $balita->NAMA_ORANG_TUA }}</td>

@@ -55,8 +55,8 @@
             <td>
               <a href="/editposyandu{{ $posyandu->ID_POSYANDU }}"><i class="far fa-edit"></i></a> | 
                {{-- <a href="/hapusposyandu{{ $posyandu->ID_POSYANDU }}"><i class="fas fa-trash-alt" style="color :red"></i></a> --}}
-               <form action="{{ url('hapus'.$posyandu->ID_POSYANDU) }}" method="GET" class="d-inline" onsubmit="return confirm('Hapus Data ?')">
-                @method('hapus')
+               <form action="{{ url('/posyandu/hapus'.$posyandu->ID_POSYANDU) }}" method="GET" class="d-inline" onsubmit="return confirm('Hapus Data ?')">
+                @method('/posyandu/hapus')
                 @csrf
                 <button class="btn btn-danger btn-sm">
                   <i class="fas fa-trash-alt"></i></button>
