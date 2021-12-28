@@ -13,7 +13,10 @@ class KelurahanController extends Controller
 {
     public function index(){
         //ambil data dari table kelurahan
-        $kelurahan = DB::table('kelurahan')->where('DELETED_AT',null)->Paginate(4);
+        $kelurahan = DB::table('kelurahan')
+        ->join('kecamatan','kecamatan.ID_KECAMATAN', '=','kelurahan.ID_KECAMATAN')  
+        ->where('kelurahan.DELETED_AT',null)
+        ->Paginate(4);
         // $kelurahan = kelurahan::latest();
 
         // if(request('search')){
@@ -33,7 +36,8 @@ class KelurahanController extends Controller
  
     		// mengambil data dari table kelurahan sesuai pencarian data
 		$kelurahan = DB::table('kelurahan')
-		->where('KELURAHAN','like',"%".$cari."%")
+        ->join('kecamatan','kecamatan.ID_KECAMATAN', '=','kelurahan.ID_KECAMATAN')  
+		->where('kelurahan.KELURAHAN','like',"%".$cari."%")
 		->paginate();
  
     		// mengirim data kelurahan ke view index

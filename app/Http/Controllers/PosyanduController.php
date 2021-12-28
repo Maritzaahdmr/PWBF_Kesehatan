@@ -15,7 +15,10 @@ class PosyanduController extends Controller
 {
     public function index(){
         //ambil data dari table posyandu
-        $posyandu = DB::table('posyandu')->where('DELETED_AT',null)->Paginate(4);
+        $posyandu = DB::table('posyandu')
+        ->join('kelurahan', 'kelurahan.ID_KELURAHAN', '=', 'posyandu.ID_KELURAHAN')
+        ->where('posyandu.DELETED_AT',null)
+        ->Paginate(4);
 
         // mengirim data ke view kelurahan
         return view('posyandu', [
@@ -31,7 +34,8 @@ class PosyanduController extends Controller
  
     		// mengambil data dari table kelurahan sesuai pencarian data
 		$posyandu = DB::table('posyandu')
-		->where('NAMA_POSYANDU','like',"%".$cari."%")
+        ->join('kelurahan', 'kelurahan.ID_KELURAHAN', '=', 'posyandu.ID_KELURAHAN')
+		->where('posyandu.NAMA_POSYANDU','like',"%".$cari."%")
 		->paginate();
  
     		// mengirim data kelurahan ke view index

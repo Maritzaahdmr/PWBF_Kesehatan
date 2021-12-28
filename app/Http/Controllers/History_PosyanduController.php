@@ -13,7 +13,9 @@ class History_PosyanduController extends Controller
 {
     public function index(){
         //ambil data dari table history
-        $history_posyandu = DB::table('history_posyandu')->simplePaginate(4);
+        $history_posyandu = DB::table('history_posyandu')
+        ->join('balita', 'balita.ID_BALITA', '=', 'history_posyandu.ID_BALITA')
+        ->simplePaginate(4);
 
         // mengirim data ke view history
         return view('history_posyandu', [
@@ -28,6 +30,7 @@ class History_PosyanduController extends Controller
  
     		// mengambil data dari table kelurahan sesuai pencarian data
 		$history_posyandu = DB::table('history_posyandu')
+        ->join('balita', 'balita.ID_BALITA', '=', 'history_posyandu.ID_BALITA')
 		->where('HISTORY_POSYANDU','like',"%".$cari."%")
 		->paginate();
  

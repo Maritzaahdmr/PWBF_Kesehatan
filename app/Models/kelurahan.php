@@ -10,6 +10,7 @@ class kelurahan extends Model
 {
         use SoftDeletes;
     protected $table = 'kelurahan';
+    protected $dates = ['DELETED_AT'];
 
     public function tambah(){
         

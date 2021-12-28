@@ -35,7 +35,7 @@
           <thead>
           <tr>
             <th>ID POSYANDU</th>
-            <th>ID KELURAHAN</th>
+            <th>KELURAHAN</th>
             <th>NAMA POSYANDU</th>
             <th>ALAMAT POSYANDU</th>
             {{-- <th>CREATED AT</th>
@@ -47,7 +47,7 @@
           <tbody>
           <tr>
             <td>{{ $posyandu->ID_POSYANDU }}</td>
-            <td>{{ $posyandu->ID_KELURAHAN }}</td>
+            <td>{{ $posyandu->KELURAHAN }}</td>
             <td>{{ $posyandu->NAMA_POSYANDU }}</td>
             <td>{{ $posyandu->ALAMAT_POSYANDU }}</td>
             {{-- <td>{{ $posyandu->CREATED_AT }}</td>

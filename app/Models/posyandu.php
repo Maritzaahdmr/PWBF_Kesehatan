@@ -11,6 +11,7 @@ class posyandu extends Model
     use SoftDeletes;
 
     protected $table = 'posyandu';
+    protected $dates = ['DELETED_AT'];
 
     public function tambah(){
         

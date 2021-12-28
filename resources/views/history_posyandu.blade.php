@@ -30,7 +30,7 @@
           <thead>
           <tr>
             <th>ID History Posyandu</th>
-            <th>ID Balita</th>
+            <th>Nama Balita</th>
             <th>Tgl Posyandu</th>
             <th>Berat Badan Balita (Kg)</th>
             <th>Tinggi Badan (Cm)</th>
@@ -43,7 +43,7 @@
           <tbody>
           <tr>
             <td>{{ $history_posyandu->ID_HISTORY_POSYANDU }}</td>
-            <td>{{ $history_posyandu->ID_BALITA }}</td>
+            <td>{{ $history_posyandu->NAMA_BALITA }}</td>
             <td>{{ $history_posyandu->TGL_POSYANDU }}</td>
             <td>{{ $history_posyandu->BERAT_BADAN_BALITA }}</td>
             <td>{{ $history_posyandu->TINGGI_BADAN }}</td>

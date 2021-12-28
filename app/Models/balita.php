@@ -11,6 +11,8 @@ class balita extends Model
     use SoftDeletes;
     
     protected $table = 'balita';
+    protected $dates = ['DELETED_AT'];
+
 
     public function tambah(){
         
