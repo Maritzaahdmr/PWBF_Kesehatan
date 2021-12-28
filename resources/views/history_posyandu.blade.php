@@ -51,8 +51,8 @@
             <td>{{ $history_posyandu->UPDATED_AT }}</td> --}}
             <td>
               <a href="edithistory_posyandu{{ $history_posyandu->ID_HISTORY_POSYANDU }}"><i class="far fa-edit"></i></a> |
-              <form action="{{ url('hapus/history_posyandu'.$history_posyandu->ID_HISTORY_POSYANDU) }}" method="GET" class="d-inline" onsubmit="return confirm('Hapus Data ?')">
-                @method('hapushistory_posyandu')
+              <form action="{{ url('/hapus/history_posyandu'.$history_posyandu->ID_HISTORY_POSYANDU) }}" method="GET" class="d-inline" onsubmit="return confirm('Hapus Data ?')">
+                @method('/hapus/history_posyandu')
                 @csrf
                 <button class="btn btn-danger btn-sm">
                   <i class="fas fa-trash-alt"></i></button>
