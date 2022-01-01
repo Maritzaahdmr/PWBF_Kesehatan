@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\Balita;
-use App\Models\Posyandu;
+use App\Models\balita;
+use App\Models\posyandu;
 use App\Models\trashbalita;
 use App\createbalita;
 

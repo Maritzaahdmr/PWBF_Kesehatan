@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Role;
-use App\Models\Users;
+use App\Models\role;
+use App\Models\users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\users;
-use App\Models\Role;
+use App\Models\role;
 use Illuminate\Support\Str;
 class RegistrasiController extends Controller
 {

@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\History_Posyandu;
-use App\Models\Balita;
+use App\Models\history_posyandu;
+use App\Models\balita;
 use App\Models\trashhistory_posyandu;
 use App\createhistory_posyandu;
 

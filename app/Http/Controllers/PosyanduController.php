@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\Posyandu;
-use App\Models\Kelurahan;
+use App\Models\posyandu;
+use App\Models\kelurahan;
 use App\Models\trashposyandu;
 use App\createposyandu;
 
